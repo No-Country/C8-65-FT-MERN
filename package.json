@@ -2,16 +2,12 @@
   "name": "clear",
   "version": "1.0.0",
   "description": "",
-<<<<<<< HEAD
-  "main": "./backend/server.js",
-=======
-  "main": "server.js",
->>>>>>> 4e66d8e8dc539d46f03c358842e7d89dd69f7205
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev":"node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node backend/server.js"
   },
   "author": "",
   "license": "ISC"
