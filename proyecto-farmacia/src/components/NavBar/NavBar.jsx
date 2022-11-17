@@ -7,6 +7,13 @@ import { BsPerson } from 'react-icons/bs'
 
 const NavBar = () => {
 
+
+    return (
+        <div className='bg-color-blue'>
+            h
+        </div>
+
+
     const [open, setOpen] = useState(true)
 
     return (
@@ -38,6 +45,7 @@ const NavBar = () => {
                 </div>
             </nav>
         </IconContext.Provider>
+
     )
 }
 
