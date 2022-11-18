@@ -1,40 +1,67 @@
-import React from 'react'
-import './ProductStyle.css'
+import React from "react";
+import "./ProductStyle.css";
 
 const Product = () => {
     const obj = {
-        title: "Zapatillas",
+        title: "BIODERMA SEBIUM H2O AGUA MICELAR 250 ML",
         price: 2000,
         quantity: 0,
-
-    }
-    const { title, price, quantity } = obj
+        categories: ["asd", "222", "#"],
+    };
+    const { title, price, quantity, categories } = obj;
     return (
-        <section className='w-full h-screen flex justify-center'>
-            <article className='w-10/12 p-10'>
-                <div className='w-full flex justify-between'>
-                    <div className='w-[50%] h-80 bg-black'></div>
-                    <div className='w-[40%]'>
-                        <h2 className='font-bold font-mono text-3xl'>{obj.title}</h2>
-                        <div className='flex flex-col justify-center gap-3 mt-10'>
-                            <span className=' text-xl'>${price}</span>
-                            <div className='flex gap-2'>
-                                <div className='flex gap-2'>
-                                    <button className='quantity-btn'>-</button>
-                                    <button className='text-1xl border-solid border-2 px-2 border-green-400 rounded-sm'>{quantity}</button>
-                                    <button className='quantity-btn'>+</button>
+        <section className="w-full h-screen flex justify-center">
+            <article className="w-10/12 p-10">
+                <div className="w-full flex justify-between mb-6">
+                    <img
+                        src="/logo192.png"
+                        alt=""
+                        className="w-[50%] h-80 object-cover"
+                    />
+                    <div className="w-[40%]">
+                        <h2 className="font-bold font-mono text-4xl">{obj.title}</h2>
+                        <div
+                            className="flex flex-col mt-[1.2rem] h-full
+                        gap-[1rem]"
+                        >
+                            <span className=" font-semibold text-xl">${price}</span>
+                            <div className="flex gap-2">
+                                <div className="flex gap-2">
+                                    <button className="quantity-btn">-</button>
+                                    <button className="text-1xl border-solid border-2 px-2 border-green-400 rounded-sm">
+                                        {quantity}
+                                    </button>
+                                    <button className="quantity-btn">+</button>
                                 </div>
-                                <button className=''>{"<3"}</button>
+                                <button className="">{"<3"}</button>
                             </div>
-                            <button className='bg-green-500 h-[2.3rem] w-[10rem] rounded-xl text-white'>Add Cart</button>
+                            <button className="bg-green-500 h-[2.3rem] w-[10rem] rounded-xl text-white">
+                                Add Cart
+                            </button>
+                            <ul className="flex">
+                                <li className="text-[1.2rem]" >Categorias: {categories && <span className="font-semibold text-[1rem]">{categories.join(", ")}</span>}</li>
+                                {/* {categories.map((category, index) => (
+                                    <li key={category}>{category}{categories.length - 1 === index ? "" : ","}</li>
+                                ))} */}
+                            </ul>
+
                         </div>
                     </div>
                 </div>
+                <div className="w-[50%]">
+                    <h3 className="border-solid border-green-500 border-b-4 inline">
+                        Description
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dignissimos, quia quam. Voluptate fugit vero distinctio ipsam, minus
+                        laboriosam facilis? Fuga tempora distinctio adipisci, veniam in
+                        praesentium! Alias sequi saepe beatae.
+                    </p>
+                </div>
             </article>
-
-
         </section>
-    )
-}
+    );
+};
 
-export default Product
+export default Product;
