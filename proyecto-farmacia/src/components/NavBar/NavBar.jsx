@@ -12,7 +12,7 @@ const NavBar = () => {
     return (
         <IconContext.Provider value={{ color: '#2ca289', size: '2em' }}>
             <nav className='shadow-md w-full sticky top-0 left-0'>
-                <div className='md:flex items-center justify-between  bg-white py-2 md:px-10 px-7'>
+                <div className='flex items-center justify-between  bg-white py-2 md:px-10 px-7'>
                     <Link to='/'>
                         <div className='flex flex-row w-auto'>
                             <div className='flex flex-col my-auto'>

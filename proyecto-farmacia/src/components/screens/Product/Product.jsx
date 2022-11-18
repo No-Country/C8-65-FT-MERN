@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductStyle.css";
 
 const Product = () => {
@@ -12,14 +13,14 @@ const Product = () => {
     return (
         <section className="w-full h-screen flex justify-center">
             <article className="w-10/12 p-10">
-                <div className="w-full flex justify-between mb-6">
+                <div className="w-full flex justify-between items-center  mb-6 flex-col md:flex-row sm:items-start">
                     <img
                         src="/logo192.png"
                         alt=""
-                        className="w-[50%] h-80 object-cover"
+                        className="w-[80%] sm:w-[50%] h-80 object-cover"
                     />
-                    <div className="w-[40%]">
-                        <h2 className="font-bold font-mono text-4xl">{obj.title}</h2>
+                    <div className="w-[80%] md:w-[40%]">
+                        <h2 className="font-bold font-mono text-2xl md:text-4xl  ">{obj.title}</h2>
                         <div
                             className="flex flex-col mt-[1.2rem] h-full
                         gap-[1rem]"
@@ -33,7 +34,7 @@ const Product = () => {
                                     </button>
                                     <button className="quantity-btn">+</button>
                                 </div>
-                                <button className="">{"<3"}</button>
+                                <button className=""><AiOutlineHeart style={{ color: '#2ca289', fontSize: '2em' }} /></button>
                             </div>
                             <button className="bg-green-500 h-[2.3rem] w-[10rem] rounded-xl text-white">
                                 Add Cart
