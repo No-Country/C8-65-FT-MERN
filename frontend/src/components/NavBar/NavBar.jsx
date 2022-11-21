@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from './pharmacie.svg'
+
 import { AiOutlineShoppingCart, AiOutlineHeart, AiOutlineMenu, AiOutlineClose, AiOutlinePhone } from 'react-icons/ai'
 import { IconContext } from 'react-icons/lib'
 import { BsPerson } from 'react-icons/bs'
 
 const NavBar = () => {
+
+
+
+
 
     const [open, setOpen] = useState(true)
 
@@ -19,7 +23,7 @@ const NavBar = () => {
                                 <h2 className=' text-xl cursor-pointer flex items-center '>Pharmacy Medical</h2>
                                 <p className='text-center'>Tienda de farmacia</p>
                             </div>
-                            <img className='object-contain h-20 w-20 m-4' src={logo} alt="" />
+                            {/* <img className='object-contain h-20 w-20 m-4' src={logo} alt="" /> */}
                         </div>
                     </Link>
                     <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
@@ -38,6 +42,7 @@ const NavBar = () => {
                 </div>
             </nav>
         </IconContext.Provider>
+
     )
 }
 
