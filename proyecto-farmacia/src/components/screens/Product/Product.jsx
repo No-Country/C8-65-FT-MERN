@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductStyle.css";
+import { FcLike } from 'react-icons/fc'
+
 
 const Product = () => {
     const obj = {
@@ -56,7 +58,7 @@ const Product = () => {
                                 <button className="bg-green-500 h-[2.3rem] w-[12rem] md:w-[10rem] rounded-xl text-white">
                                     Add Cart
                                 </button>
-                                <button className=""><AiOutlineHeart style={{ color: '#2ca289', fontSize: '2em' }} /></button>
+                                <button className="" onClick={() => setFav(!FavProduct)}>{FavProduct ? <FcLike style={{ color: '#2ca289', fontSize: '2em' }} /> : <AiOutlineHeart style={{ color: '#2ca289', fontSize: '2em' }} />}</button>
                             </div>
                             <ul className="flex flex-col">
                                 <li className="text-[1.2rem]" >Categorias: {categories && <span className="font-semibold text-[1rem]">{categories.join(", ")}</span>}</li>
