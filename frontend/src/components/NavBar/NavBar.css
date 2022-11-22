@@ -1,7 +1,3 @@
-.navRojo {
-    background: red;
-}
-
-.navBlue {
-    background: blue;
+nav, .pioridad {
+    z-index: 999;
 }

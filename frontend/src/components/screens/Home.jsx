@@ -53,13 +53,34 @@ const Home = () => {
     console.log(products);
     return (
         <>
-            <h3 className="ml-10 font-medium text-xl my-8">Productos Recomendados</h3>
-            <div className="grid xl:grid-cols-4 auto-cols-fr grid-rows-4 w-auto gap-y-14 gap-x-5 p-10 lg:grid-cols-3 grid-cols-2">
-                {products.map((product) => (
-                    <Card product={product} ></Card>
-                ))}
-            </div>
+            <Swiper
+                slidesPerView={1}
+                loop={true}
+                navigation={true}
+                modules={[Autoplay, Navigation, Thumbs]}
+                grabCursor={true}
+                className="  md:w-full"
 
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                }}
+
+            >{
+
+                    <div className="flex justify-center items-center h-screen space-x-5">
+                        {products.map((product) => (
+                            <SwiperSlide className='flex items-center justify-center h-screen space-x-5 mt-20' key={product._id}>
+                                <Card product={product} ></Card>
+                            </SwiperSlide>
+                        ))}
+                    </div>
+                }
+            </Swiper>
         </>
     );
 };
