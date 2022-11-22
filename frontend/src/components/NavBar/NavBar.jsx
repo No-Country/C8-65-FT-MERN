@@ -31,7 +31,7 @@ const NavBar = () => {
 
     return (
         <IconContext.Provider value={{ color: '#2ca289' }}>
-            <nav className=' shadow-md w-full sticky top-0 left-0 h-auto'>
+            <nav className=' shadow-md w-full sticky top-0 left-0' style={{ 'zIndex': 999 }} >
                 <div className='flex md:justify-between justify-around  bg-white py-2 md:px-10 px-7'>
                     <div className='absolute left-6 md:hidden top-6 scale-150'>
                         <AiOutlineMenu onClick={showMenu} className='scale-150 cursor-pointer' />
@@ -61,7 +61,7 @@ const NavBar = () => {
                         <Link to='/' className='mx-3'><AiOutlinePhone className='h-7 w-7' /></Link>
                     </ul>
                 </div>
-                <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#00ACC1] justify-around text-white'>
+                <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#00ACC1] justify-around text-white pioridad z-[-1]'>
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/categorias.png' className='h-7 w-7' /></Link>Categorias</li>
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_garganta.png' className='h-7 w-7' /></Link>Dolor de garganta</li>
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_muelas.png' className='h-7 w-7' /></Link>Dolor de muelas</li>
