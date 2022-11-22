@@ -1,21 +1,30 @@
-import NavBar from "./components/NavBar/NavBar";
-import { Route, Routes } from "react-router-dom";
-import Home from "./components/screens/Home";
-import Cart from "./components/screens/Cart";
-import Product from "./components/screens/Product/Product";
+import NavBar from './components/NavBar/NavBar';
+
+import Card from './components/productCard/ProductCard'
+
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/screens/Home';
+import Cart from './components/screens/Cart';
+import ProductScreen from './components/detalles/Detalles';
+import Example from './components/screens/CartPrueba';
+
+
 
 function App() {
   return (
-    <div className="App">
+
+
+    <div >
+
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product">
-          <Route path=":product/" element={<Product />}></Route>
-        </Route>
+        <Route path='/' element={<Home />} />
+        <Route path="/product/:slug" element={<ProductScreen />} />
+        <Route path='/cart' element={<Example />} />
       </Routes>
+
     </div>
+
   );
 }
 

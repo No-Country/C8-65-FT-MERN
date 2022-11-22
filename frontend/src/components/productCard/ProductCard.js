@@ -7,56 +7,11 @@ import { Autoplay, Thumbs, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Store } from '../../Store';
+import axios from 'axios';
 
-// const FakeApp = [{
-//   name: 'Aspirina',
-//   description: 'una nueva pastilla para tomar, cada ciertas horas',
-//   isFavorite: false,
-//   precio: 4.41
-// },
-// {
-//   name: 'Al dia siguiente',
-//   description: 'Famosa pastilla para mujeres que cogieron sin proteccion y no quieren hijos porque todas putas',
-//   isFavorite: true,
-//   precio: 4.41
-// },
-// {
-//   name: 'Simvastatina',
-//   description: 'una nueva pastilla para tomar, cada ciertas horas',
-
-//   isFavorite: true,
-//   precio: 4.41
-// }, {
-//   name: 'Amlodipina',
-//   description: 'una nueva pastilla para tomar, cada ciertas horas',
-//   isFavorite: true,
-//   precio: 4.41
-// }, {
-//   name: 'Paracetamol',
-//   description: 'una nueva pastilla para tomar, cada ciertas horas',
-//   isFavorite: true,
-//   precio: 4.41
-// },
-// {
-//   name: 'KevinFake',
-//   description: 'una nueva pastilla para tomar, cada ciertas horas',
-//   isFavorite: true,
-//   precio: 4.41
-// },
-// {
-//   name: 'Ultra',
-//   description: 'una nueva pastilla para tomar, cada ciertas horas',
-//   isFavorite: true,
-//   precio: 4.41,
-// },
-// {
-//   name: 'Lexotiroxina sódica',
-//   description: 'una nueva pastilla para tomar, cada ciertas horas',
-//   isFavorite: true,
-//   precio: 4.41
-// },
-// ]
 
 function Card(props) {
 
@@ -68,19 +23,36 @@ function Card(props) {
     setFavorito(!favorito)
   }
 
-  const { product } = props
+  const { product } = props;
+
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const {
+    cart: { cartItems },
+  } = state;
+  const addToCartHandler = async (item) => {
+    const existItem = cartItems.find((x) => x._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${item._id}`);
+    if (data.stock < quantity) {
+      window.alert('Producto sin stock');
+      return;
+    }
+    // se usa ese nombre para no confundir con "dispatch"
+    ctxDispatch({ type: 'ADD_TO_CART', payload: { ...item, quantity } })
+
+  };
   return (
 
 
 
 
-    <div key={product.id} className=" max-w-[290px] max-h-[30rem] flex flex-col bg-white border-gray-200
+    <div key={product.id} className=" w-auto max-h-[30rem] flex flex-col bg-white border-gray-200
        p-4 border-2 rounded-2xl shadow-slate-200 shadow-md">
       {favorito
         ? <FcLike onClick={handleFavourite} className='w-8 h-8 flex self-end' />
         : <AiOutlineHeart onClick={handleFavourite} className='w-8 h-8 flex self-end' />}
-      <img className=" w-52 h-52 mt-2 self-center" src={product.image} alt="" srcset="" />
-      <h2 className="flex self-center mt-3 text-2xl font-medium" >{product.name}aaaaaa</h2>
+      <img className=" w-[200px] h-[200px] mt-2 self-center" src={product.image} alt="" srcset="" />
+      <Link to={`/product/${product.slug}`}><h2 className="flex self-center mt-3  font-medium text-lg" >{product.name}</h2></Link>
       {/* <p className="flex mt-4 ml-2 text-gr" >{product.description}</p> */}
 
       <div className="flex row-auto mt-2 gap-2">
@@ -96,7 +68,7 @@ function Card(props) {
         </div>
 
         <div className="h-11 flex border-2 mt-2 border-red-400 rounded-lg">
-          <button className=" w-28 bg-red-400  text-white font-semibold rounded-md hover:bg-red-600">Buy</button>
+          <button className=" w-28 bg-red-400  text-white font-semibold rounded-md hover:bg-red-600" onClick={() => addToCartHandler(product)}>Buy</button>
           <img className="w-9 h-9 ml-2 mr-2" src={cart} alt="pasti" srcset="" />
         </div>
       </div>
