@@ -1,5 +1,3 @@
-
-
 import NavBar from './components/NavBar/NavBar';
 
 import Card from './components/productCard/ProductCard'
