@@ -114,7 +114,7 @@ function Example() {
                                         <span>Total cost</span>
                                         <span>{cartItems.reduce((a, c) => a + c.precio * c.quantity, 0)}$</span>
                                     </div>
-                                    <button className="border rounded-2xl bg-[#00ACC1] font-semibold hover:bg-[#0097A7] py-3 text-sm text-white uppercase w-full">Checkout</button>
+                                    <button className="border rounded-2xl bg-[#00ACC1] font-semibold hover:bg-[#0097A7] py-3 text-sm text-white uppercase w-full" onClick={checkoutHandler}>Checkout</button>
                                 </div>
                             </div>
 
