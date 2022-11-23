@@ -52,33 +52,36 @@ const Home = () => {
 
     console.log(products);
     return (
-        <Swiper
-            slidesPerView={1}
-            loop={true}
-            navigation={true}
-            modules={[Autoplay, Navigation, Thumbs]}
-            grabCursor={true}
-            className="  md:w-full"
+        <>
+            <Swiper
+                slidesPerView={1}
+                loop={true}
+                navigation={true}
+                modules={[Autoplay, Navigation, Thumbs]}
+                grabCursor={true}
+                className="  md:w-full"
 
-            breakpoints={{
-                640: {
-                    slidesPerView: 2,
-                },
-                768: {
-                    slidesPerView: 3,
-                },
-            }}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                }}
 
-        >{
-                <div className="flex justify-center items-center h-screen space-x-5">
-                    {products.map((product) => (
-                        <SwiperSlide className='flex items-center justify-center h-screen space-x-5 mt-20' key={product._id}>
-                            <Card product={product} ></Card>
-                        </SwiperSlide>
-                    ))}
-                </div>
-            }
-        </Swiper>
+            >{
+
+                    <div className="flex justify-center items-center h-screen space-x-5">
+                        {products.map((product) => (
+                            <SwiperSlide className='flex items-center justify-center h-screen space-x-5 mt-20' key={product._id}>
+                                <Card product={product} ></Card>
+                            </SwiperSlide>
+                        ))}
+                    </div>
+                }
+            </Swiper>
+        </>
     );
 };
 
