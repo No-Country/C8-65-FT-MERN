@@ -64,7 +64,7 @@ const NavBar = () => {
                         <Link to='/' className='mx-3'><AiOutlinePhone className='h-7 w-7' /></Link>
                     </ul>
                 </div>
-                <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#00ACC1] justify-around text-white pioridad z-[-1]'>
+                <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#24BAA0] justify-around text-white pioridad z-[-1]'>
 
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/categorias.png' className='h-7 w-7' /></Link>Categorias</li>
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_garganta.png' className='h-7 w-7' /></Link>Dolor de garganta</li>

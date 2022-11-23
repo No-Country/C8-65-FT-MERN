@@ -45,13 +45,14 @@ function Card(props) {
   return (
 
 
-    <IconContext.Provider value={{ color: '#2ca289' }}>
+    <IconContext.Provider value={{ color: '#9E9E9E' }}>
+
 
       <div key={product.id} className=" w-auto max-h-[30rem] flex flex-col bg-white border-gray-200
-       p-4 border-2 rounded-2xl shadow-slate-200 shadow-md">
+  p-4 border-2 rounded-2xl shadow-slate-200 shadow-md">
         {favorito
-          ? <FcLike onClick={handleFavourite} className='w-8 h-8 flex self-end text-blue' />
-          : <AiOutlineHeart onClick={handleFavourite} className='w-8 h-8 flex self-end' color='#000000' />}
+          ? <FcLike onClick={handleFavourite} className='w-8 h-8 flex self-end' />
+          : <AiOutlineHeart onClick={handleFavourite} className='w-8 h-8 flex self-end' />}
         <img className=" w-[200px] h-[200px] mt-2 self-center" src={product.image} alt="" srcset="" />
         <Link to={`/product/${product.slug}`}><h2 className="flex self-center mt-3  font-medium text-lg" >{product.name}</h2></Link>
         {/* <p className="flex mt-4 ml-2 text-gr" >{product.description}</p> */}
@@ -68,13 +69,15 @@ function Card(props) {
             <p className="ml-3 text-gray-500 line-through">$5,550</p>
           </div>
 
-          <div className="h-11 flex border-2 mt-2 border-red-400 rounded-lg">
-            <button className=" w-28 bg-red-400  text-white font-semibold rounded-md hover:bg-red-600" onClick={() => addToCartHandler(product)}>Buy</button>
+          <div className="h-11 flex border-2 mt-2 border-celeste rounded-lg hover:border-celeste_oscuro">
+            <button className=" w-28 bg-celeste  text-white font-semibold rounded-md hover:bg-celeste_oscuro" onClick={() => addToCartHandler(product)}>Buy</button>
             <img className="w-9 h-9 ml-2 mr-2" src={cart} alt="pasti" srcset="" />
           </div>
         </div>
       </div>
+
     </IconContext.Provider>
+
 
   );
 }
