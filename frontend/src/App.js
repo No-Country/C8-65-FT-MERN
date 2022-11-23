@@ -9,6 +9,7 @@ import ProductScreen from './components/detalles/Detalles';
 import Example from './components/screens/CartPrueba';
 import Product from './components/screens/Product/Product';
 import SigIn from './components/screens/Signin';
+import SignUp from './components/screens/SignUp';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/product/:slug" element={<ProductScreen />} />
         <Route path='/cart' element={<Example />} />
         <Route path='/signin' element={<SigIn />} />
+        <Route path='/signup' element={<SignUp />} />
       </Routes>
 
     </div>
