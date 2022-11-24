@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Menu } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { BsPerson } from 'react-icons/bs'
 import { Store } from "../../Store";
 import { Link } from "react-router-dom";

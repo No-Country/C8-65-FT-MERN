@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useQuery } from 'react-query'
 import { useParams, redirect } from "react-router-dom";
 import Loading from "../../Loading/Loading";
-import ErrorDetails from "../../Loading/ErrorDetails/ErrorDetails";
+import ErrorDetails from "../../ErrorDetails/ErrorDetails";
 const Product = () => {
     const { product } = useParams()
     const fetchdata = () => {
@@ -14,7 +14,7 @@ const Product = () => {
 
     if (isLoading || isError) {
         return (
-            <section className="w-full h-screen flex justify-center items-center">
+            <section className="w-full h-screen">
                 {isError && <ErrorDetails />}
                 {isLoading && <Loading />}
             </section>

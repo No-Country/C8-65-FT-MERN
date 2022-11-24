@@ -1,24 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import "./ProductStyle.css";
 import { FcLike } from 'react-icons/fc'
+import { Store } from '../../Store';
 
 
 const ProductDetails = (data) => {
-    console.log(data)
-    // const obj = {
-    //     title: "BIODERMA SEBIUM H2O AGUA MICELAR 250 ML",
-    //     price: 2000,
-    //     quantity: 0,
-    //     categories: ["asd", "222", "#"],
-    //     stock: 10,
-    //     receta: false,
-    //     isFavorite: false,
-    // };
-
+    const { state, dispatch } = useContext(Store)
+    const CartItems = state.cart.cartItems
+    const FindItem = CartItems.find(item => item.slug === data.slug)
     const { name, precio, image, quantity, receta, description, isFavorite, stock, category } = data;
-    const [QuantitBuy, setQuantity] = useState(quantity || 0)
+    const [QuantitBuy, setQuantity] = useState(FindItem.quantity || quantity || 0)
     const [FavProduct, setFav] = useState(isFavorite)
     const IncrementQuantity = () => {
         if (QuantitBuy < stock) setQuantity(QuantitBuy + 1);
@@ -27,6 +20,9 @@ const ProductDetails = (data) => {
     const DecrementQuantity = () => {
         if (QuantitBuy !== 0 && QuantitBuy <= stock) return setQuantity(QuantitBuy - 1)
         return
+    }
+    const addCartHandle = () => {
+        dispatch({ type: 'ADD_TO_CART', payload: { ...data, quantity: QuantitBuy } })
     }
     return (
         <article className="w-[100%] md:w-10/12 md:p-10">
@@ -54,7 +50,7 @@ const ProductDetails = (data) => {
                             <span className="text-xl font-bold text-green-500">{stock}Disp</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <button className="bg-green-500 h-[2.3rem] w-[12rem] md:w-[10rem] rounded-xl text-white">
+                            <button onClick={addCartHandle} className="bg-green-500 h-[2.3rem] w-[12rem] md:w-[10rem] rounded-xl text-white">
                                 Add Cart
                             </button>
                             <button className="" onClick={() => setFav(!FavProduct)}>{FavProduct ? <FcLike style={{ color: '#2ca289', fontSize: '2em' }} /> : <AiOutlineHeart style={{ color: '#2ca289', fontSize: '2em' }} />}</button>
