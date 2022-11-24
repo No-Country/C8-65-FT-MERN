@@ -9,6 +9,7 @@ import Product from "./components/screens/Product/Product";
 import SigIn from "./components/screens/Signin";
 import SignUp from "./components/screens/SignUp";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Pasarella from './components/screens/Pasarella';
 const queryClient = new QueryClient();
 function App() {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ function App() {
           </Route>
           <Route path="/signin" element={<SigIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/shipping' element={<Pasarella />} />
         </Routes>
       </QueryClientProvider>
     </div>
