@@ -4,6 +4,6 @@
 
 @layer components {
     .quantity-btn {
-        @apply text-green-500 rounded-lg text-4xl
+        @apply text-celeste rounded-lg text-4xl
     }
 }

@@ -24,7 +24,6 @@ function App() {
           </Route>
           <Route path="/signin" element={<SigIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="*">{setTimeout(() => navigate("/"), 1000)}</Route>
         </Routes>
       </QueryClientProvider>
     </div>
