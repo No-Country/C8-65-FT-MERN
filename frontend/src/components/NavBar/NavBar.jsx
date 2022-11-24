@@ -6,6 +6,7 @@ import { IconContext } from 'react-icons/lib'
 import { BsPerson } from 'react-icons/bs'
 import { Store } from '../../Store'
 import { MenuItems } from './MenuItems'
+import { DropDown } from './DropDown'
 
 const NavBar = () => {
 
@@ -18,7 +19,6 @@ const NavBar = () => {
         localStorage.removeItem('userInfo');
         localStorage.removeItem('shippingAddress');
     }
-    console.log(userInfo);
 
 
     const [open, setOpen] = useState(true)
@@ -28,7 +28,7 @@ const NavBar = () => {
     const showMenu = () => {
         setActive(!active)
     }
-
+    console.log(userInfo);
     return (
         <IconContext.Provider value={{ color: '#2ca289' }}>
             <nav className=' shadow-md w-full sticky top-0 left-0' style={{ 'zIndex': 999 }} >
@@ -42,16 +42,19 @@ const NavBar = () => {
                             <div className='flex flex-col '>
                                 <h2 className=' text-ms cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
                                 <p className='text-center font-bold text-[#0097a7]'>Medicamentos</p>
+
                             </div>
 
                         </div>
                     </Link>
 
+
                     <ul className='flex items-center md:static bg-white left-0 w-auto md:w-auto pl-0 pl-9 trasition-all duration-500 ease-in    '>
+
                         <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto'></li>
                         <Link to='/' className='mx-3'><AiOutlineHeart className='h-7 w-7' /></Link>
                         <li className='md:ml-8  no-underline md:my-0 my-7'></li>
-                        <Link to='/' className='mx-3'><BsPerson className='h-7 w-7 ' /></Link>
+                        <DropDown />
                         <li className='md:ml-8  no-underline md:my-0 my-7 block align-middle'></li>
                         <Link to='/cart' className='relative flex mx-3 '>
                             <AiOutlineShoppingCart className='flex-1  fill-current h-7 w-7 ' />
@@ -61,13 +64,15 @@ const NavBar = () => {
                         <Link to='/' className='mx-3'><AiOutlinePhone className='h-7 w-7' /></Link>
                     </ul>
                 </div>
-                <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#00ACC1] justify-around text-white pioridad z-[-1]'>
+                <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#24BAA0] justify-around text-white pioridad z-[-1]'>
+
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/categorias.png' className='h-7 w-7' /></Link>Categorias</li>
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_garganta.png' className='h-7 w-7' /></Link>Dolor de garganta</li>
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_muelas.png' className='h-7 w-7' /></Link>Dolor de muelas</li>
                     <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_cabeza.png' className='h-7 w-7' /></Link>Dolor de cabeza</li>
                 </ul>
                 <MenuItems showMenu={showMenu} active={active} />
+
             </nav>
         </IconContext.Provider>
 
