@@ -65,7 +65,7 @@ function Homee() {
           <MdOutlineComputer className="w-24 h-11"></MdOutlineComputer>
           <div className="flex flex-col">
             <h3 className="text-lg font-medium ">Online</h3>
-            <p>Puedes hacer tus pedidos via online.</p>
+            <p>Hacer pedidos via online.</p>
           </div>
         </div>
 
