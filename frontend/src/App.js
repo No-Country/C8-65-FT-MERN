@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar/NavBar";
+import Homee from "./components/Homee/Homee"
 import Card from "./components/productCard/ProductCard";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./components/screens/Home";
@@ -15,7 +16,8 @@ function App() {
   const navigate = useNavigate();
   return (
     <div>
-      <NavBar />
+        <NavBar />
+        <Homee></Homee>
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -27,7 +29,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path='/shipping' element={<Pasarella />} />
         </Routes>
-      </QueryClientProvider>
+      </QueryClientProvider> 
     </div>
   );
 }
