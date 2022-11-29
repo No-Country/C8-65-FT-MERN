@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar/NavBar";
+import Homee from "./components/Homee/Homee"
 import Card from "./components/productCard/ProductCard";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./components/screens/Home";
@@ -9,10 +10,13 @@ import Product from "./components/screens/Product";
 import SigIn from "./components/screens/Signin";
 import SignUp from "./components/screens/SignUp";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Pasarella from './components/screens/Pasarella';
 const queryClient = new QueryClient();
 function App() {
   return (
     <div>
+        <NavBar />
+        <Homee></Homee>
       <QueryClientProvider client={queryClient}>
         <NavBar />
         <Routes>
@@ -23,8 +27,9 @@ function App() {
           </Route>
           <Route path="/signin" element={<SigIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/shipping' element={<Pasarella />} />
         </Routes>
-      </QueryClientProvider>
+      </QueryClientProvider> 
     </div>
   );
 }
