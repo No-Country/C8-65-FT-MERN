@@ -1,10 +1,10 @@
 import React from "react";
-import ProductDetails from "../../ProductDetails/ProductDetails";
+import ProductDetails from "../ProductDetails/ProductDetails";
 import axios from 'axios'
 import { useQuery } from 'react-query'
-import { useParams, redirect } from "react-router-dom";
-import Loading from "../../Loading/Loading";
-import ErrorDetails from "../../ErrorDetails/ErrorDetails";
+import { useParams } from "react-router-dom";
+import Loading from "../Loading/Loading";
+import ErrorDetails from "../ErrorDetails/ErrorDetails";
 const Product = () => {
     const { product } = useParams()
     const fetchdata = () => {
@@ -22,7 +22,7 @@ const Product = () => {
     }
     return (
 
-        <section className="w-full h-screen flex justify-center">
+        <section className="w-full flex justify-center">
             {data?.data && <ProductDetails {...data.data} />}
         </section >
     );
