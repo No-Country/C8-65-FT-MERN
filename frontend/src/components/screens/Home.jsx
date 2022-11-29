@@ -12,6 +12,7 @@ import { Autoplay, Thumbs, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Homee from "../Homee/Homee";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -53,6 +54,7 @@ const Home = () => {
     console.log(products);
     return (
         <>
+            <Homee />
             <Swiper
                 slidesPerView={1}
                 loop={true}
