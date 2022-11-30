@@ -76,7 +76,7 @@ const Home = () => {
 
                     <div className="flex justify-center items-center h-screen space-x-5">
                         {products.map((product) => (
-                            <SwiperSlide className='flex items-center justify-center h-screen space-x-5 mt-20' key={product._id}>
+                            <SwiperSlide className='flex items-center justify-center space-x-5 mt-[3rem]' key={product._id}>
                                 <Card product={product} ></Card>
                             </SwiperSlide>
                         ))}

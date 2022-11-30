@@ -61,7 +61,7 @@ const NavBar = () => {
                             <span className='"absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center' pill>{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</span>
                         </Link>
                         <li className='md:ml-8  no-underline md:my-0 my-7'></li>
-                        <Link to='/' className='mx-3'><AiOutlinePhone className='h-7 w-7' /></Link>
+                        <Link to='/contact' className='mx-3'><AiOutlinePhone className='h-7 w-7' /></Link>
                     </ul>
                 </div>
                 <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#24BAA0] justify-around text-white pioridad z-[-1]'>

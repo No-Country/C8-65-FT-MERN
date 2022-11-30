@@ -9,11 +9,12 @@ import SigIn from "./components/screens/Signin";
 import SignUp from "./components/screens/SignUp";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Pasarella from "./components/screens/Pasarella";
+import Contact from "./components/screens/Contact";
 const queryClient = new QueryClient();
 function App() {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signin" element={<SigIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/shipping" element={<Pasarella />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </QueryClientProvider>
     </div>
