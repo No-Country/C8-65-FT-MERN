@@ -29,7 +29,7 @@ function Homee() {
 
               <div className="flex flex-col text-start items-start justify-start">
                 <h1 className="text-xl font-medium mb-4">Phamarcy Medicamentos</h1>
-                <p class="flex text-start">
+                <p class="flex text-start w-[50%]">
                   Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
                 </p>
 
@@ -43,10 +43,10 @@ function Homee() {
           </div>
         </div>
 
-        <div class="w-full h-28 mt-10 flex place-items-center content-center space-x-5">
+        <div class="w-full h-28 mt-10 flex items-center justify-center space-x-8">
 
           <div className=" flex row">
-            <MdOutlineSavings className="w-24 h-11"></MdOutlineSavings>
+            <MdOutlineSavings className="w-28 h-11"></MdOutlineSavings>
             <div className="flex flex-col">
               <h3 className="text-lg font-medium" >Donaciones</h3>
               <p>Donaciones a los necesitados.</p>
@@ -54,7 +54,7 @@ function Homee() {
           </div>
 
           <div className=" flex row">
-            <MdOutlineVerifiedUser className="w-24 h-11"></MdOutlineVerifiedUser>
+            <MdOutlineVerifiedUser className="w-28 h-11"></MdOutlineVerifiedUser>
             <div className="flex flex-col">
               <h3 className="text-lg font-medium" >Verificar</h3>
               <p>Verificate iniciando seccion. </p>
@@ -62,7 +62,7 @@ function Homee() {
           </div>
 
           <div className=" flex row">
-            <MdOutlineComputer className="w-24 h-11"></MdOutlineComputer>
+            <MdOutlineComputer className="w-28 h-11"></MdOutlineComputer>
             <div className="flex flex-col">
               <h3 className="text-lg font-medium ">Online</h3>
               <p>Hacer pedidos via online.</p>
@@ -70,7 +70,7 @@ function Homee() {
           </div>
 
           <div className=" flex row">
-            <CiDeliveryTruck className="w-24 h-11"></CiDeliveryTruck>
+            <CiDeliveryTruck className="w-28 h-11"></CiDeliveryTruck>
             <div className="flex flex-col">
               <h3 className="text-lg font-medium">Delivery</h3>
               <p>contamos con hacer envio hasta su casa.</p>
