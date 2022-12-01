@@ -1,9 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
 import ErrorValidate from "../ErrorValidate/ErrorValidate";
+import { HandleSubmitContact, validationContact } from "../../utils/validationContact";
 const Contact = () => {
     return (
-        <section className="h-screen flex justify-center items-center">
+        <section className="flex justify-center items-center">
             <div className="w-[90%] md:w-[30rem] flex mx-auto flex-col  items-center">
                 <h3 className='text-left w-full ml-2 my-8 text-xl'>Dejanos un mensaje</h3>
                 <Formik
@@ -13,16 +14,8 @@ const Contact = () => {
                         menssagge: "",
                     }}
 
-                    validate={(values) => {
-                        let error = {}
-                        if (!values.name) {
-                            error.name = "Ingresa un nombre"
-                        }
-                        return error
-                    }}
-                    onSubmit={() => {
-                        console.log("formulario enviado")
-                    }}
+                    validate={validationContact}
+                    onSubmit={HandleSubmitContact}
 
                 >
                     {({ values, errors, handleChange, handleSubmit, handleBlur }) => (
@@ -47,10 +40,13 @@ const Contact = () => {
                                     name="email"
                                     id="email"
                                     onChange={handleChange}
+                                    onBlur={handleBlur}
                                     value={values.email}
                                     className="my-3 rounded-2xl border-2 border-gray-200 p-1 px-3"
                                 />
                             </div>
+                            {errors.email && <ErrorValidate menssage={errors.email} />}
+
                             <div className="flex flex-col">
                                 <label htmlFor="menssagge" className="mx-4">Menssagge</label>
                                 <textarea
@@ -59,8 +55,10 @@ const Contact = () => {
                                     id="menssagge"
                                     onChange={handleChange}
                                     values={values.menssagge}
-                                    className="my-3 rounded-2xl border-2 border-gray-200 p-2 px-3"
+                                    className="my-3 rounded-2xl border-2 border-gray-200 min-h-[6rem] px-3"
                                 ></textarea>
+                                {errors.menssagge && <ErrorValidate menssage={errors.menssagge} />}
+
                             </div>
                             <div className="mb-3 text-center my-3">
                                 <button
