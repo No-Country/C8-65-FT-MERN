@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Store } from '../../Store';
+import AnimatedPage from '../AnimatedPage/AnimatedPage';
 
 
 
@@ -53,10 +54,12 @@ const OrderScreen = () => {
 
     }, [navigate, userInfo, order, orderId])
     return (
-        <div className='container m-auto flex items-center justify-center'>
-            <h3 className='my-3 text-lg font-semibold'>Orden {orderId} Generada con exito!</h3>
-            {/* <img src='./img/carroVacio.svg' alt="" className="w-60 h-60 mx-auto " /> */}
-        </div>
+        <AnimatedPage>
+            <div className='container m-auto flex items-center justify-center'>
+                <h3 className='my-3 text-lg font-semibold'>Orden {orderId} Generada con exito!</h3>
+                {/* <img src='./img/carroVacio.svg' alt="" className="w-60 h-60 mx-auto " /> */}
+            </div>
+        </AnimatedPage>
 
     )
 }

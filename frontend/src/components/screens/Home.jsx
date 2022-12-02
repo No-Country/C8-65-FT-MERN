@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Homee from "../Homee/Homee";
+import AnimatedPage from "../AnimatedPage/AnimatedPage";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -52,35 +53,37 @@ const Home = () => {
     console.log(products);
     return (
         <>
-            <Homee />
-            <Swiper
-                slidesPerView={1}
-                loop={true}
-                navigation={true}
-                modules={[Autoplay, Navigation, Thumbs]}
-                grabCursor={true}
-                className="  md:w-full"
+            <AnimatedPage>
+                <Homee />
+                <Swiper
+                    slidesPerView={1}
+                    loop={true}
+                    navigation={true}
+                    modules={[Autoplay, Navigation, Thumbs]}
+                    grabCursor={true}
+                    className="  md:w-full"
 
-                breakpoints={{
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                    },
-                }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                        },
+                    }}
 
-            >{
+                >{
 
-                    <div className="flex justify-center items-center h-screen space-x-5">
-                        {products.map((product) => (
-                            <SwiperSlide className='flex items-center justify-center  space-x-5 mt-20' key={product._id}>
-                                <Card product={product} ></Card>
-                            </SwiperSlide>
-                        ))}
-                    </div>
-                }
-            </Swiper>
+                        <div className="flex justify-center items-center h-screen space-x-5">
+                            {products.map((product) => (
+                                <SwiperSlide className='flex items-center justify-center space-x-5 mt-[3rem]' key={product._id}>
+                                    <Card product={product} ></Card>
+                                </SwiperSlide>
+                            ))}
+                        </div>
+                    }
+                </Swiper>
+            </AnimatedPage>
         </>
     );
 };
