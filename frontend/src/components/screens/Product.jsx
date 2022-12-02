@@ -5,26 +5,31 @@ import { useQuery } from 'react-query'
 import { useParams } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import ErrorDetails from "../ErrorDetails/ErrorDetails";
+import AnimatedPage from "../AnimatedPage/AnimatedPage";
 const Product = () => {
     const { product } = useParams()
     const fetchdata = () => {
         return axios.get(`/api/products/slug/${product}`)
     }
-    const { data, isError, isLoading } = useQuery("products", fetchdata)
+    const { data, isError, isFetching, isLoading } = useQuery("products", fetchdata)
 
-    if (isLoading || isError) {
+    if (isLoading || isError || isFetching) {
         return (
-            <section className="w-full h-screen">
-                {isError && <ErrorDetails />}
-                {isLoading && <Loading />}
-            </section>
+            <AnimatedPage>
+                <section className="w-full h-screen">
+                    {isError && <ErrorDetails />}
+                    {isFetching && <Loading />}
+                    {isLoading && <Loading />}
+                </section>
+            </AnimatedPage>
         )
     }
     return (
-
-        <section className="w-full flex justify-center">
-            {data?.data && <ProductDetails {...data.data} />}
-        </section >
+        <AnimatedPage>
+            <section className="w-full flex justify-center">
+                {data?.data && <ProductDetails {...data.data} />}
+            </section >
+        </AnimatedPage>
     );
 };
 
