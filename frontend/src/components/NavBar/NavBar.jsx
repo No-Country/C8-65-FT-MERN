@@ -36,8 +36,8 @@ const NavBar = () => {
                     <div className='absolute left-6 md:hidden top-6 scale-150'>
                         <AiOutlineMenu onClick={showMenu} className='scale-150 cursor-pointer' />
                     </div>
-                    <Link to='/'>
-                        <div className='flex flex-row w-auto'>
+                    <Link to='/' className='flex justify-center items-center'>
+                        <div className='flex flex-row w-auto h-full m-auto'>
                             <img className='object-contain h-10 w-10 m-2' src='./img/pills.png' alt="" />
                             <div className='flex flex-col '>
                                 <h2 className=' text-ms cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
@@ -66,10 +66,10 @@ const NavBar = () => {
                 </div>
                 <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#24BAA0] justify-around text-white pioridad z-[-1]'>
 
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/categorias.png' className='h-7 w-7' /></Link>Categorias</li>
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_garganta.png' className='h-7 w-7' /></Link>Dolor de garganta</li>
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_muelas.png' className='h-7 w-7' /></Link>Dolor de muelas</li>
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_cabeza.png' className='h-7 w-7' /></Link>Dolor de cabeza</li>
+                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/categorias.png' alt='' className='h-7 w-7' /></Link>Categorias</li>
+                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_garganta.png' alt='' className='h-7 w-7' /></Link>Dolor de garganta</li>
+                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_muelas.png' alt='' className='h-7 w-7' /></Link>Dolor de muelas</li>
+                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_cabeza.png' alt='' className='h-7 w-7' /></Link>Dolor de cabeza</li>
                 </ul>
                 <MenuItems showMenu={showMenu} active={active} />
 

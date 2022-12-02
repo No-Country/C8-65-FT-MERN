@@ -2,16 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useReducer } from "react";
 import { Link } from "react-router-dom";
-import logger from "use-reducer-logger";
 import Card from "../productCard/ProductCard";
 import { AiOutlineHeart, AiOutlineStar } from 'react-icons/ai'
-import { FcLike } from 'react-icons/fc'
 //swipper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Thumbs, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Homee from "../Homee/Homee";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -27,7 +26,7 @@ const reducer = (state, action) => {
 };
 
 const Home = () => {
-    const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+    const [{ loading, error, products }, dispatch] = useReducer(reducer, {
         products: [],
         loading: true,
         error: "",
@@ -53,6 +52,7 @@ const Home = () => {
     console.log(products);
     return (
         <>
+            <Homee />
             <Swiper
                 slidesPerView={1}
                 loop={true}
@@ -74,7 +74,7 @@ const Home = () => {
 
                     <div className="flex justify-center items-center h-screen space-x-5">
                         {products.map((product) => (
-                            <SwiperSlide className='flex items-center justify-center h-screen space-x-5 mt-20' key={product._id}>
+                            <SwiperSlide className='flex items-center justify-center  space-x-5 mt-20' key={product._id}>
                                 <Card product={product} ></Card>
                             </SwiperSlide>
                         ))}
