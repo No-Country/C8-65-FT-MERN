@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <div>
-      {/* <NavBar /> */}
+      <NavBar />
       <QueryClientProvider client={queryClient}>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -11,7 +11,7 @@ const Contact = () => {
                     initialValues={{
                         name: "",
                         email: "",
-                        menssagge: "",
+                        message: "",
                     }}
 
                     validate={validationContact}
@@ -48,16 +48,16 @@ const Contact = () => {
                             {errors.email && <ErrorValidate menssage={errors.email} />}
 
                             <div className="flex flex-col">
-                                <label htmlFor="menssagge" className="mx-4">Menssagge</label>
+                                <label htmlFor="message" className="mx-4">Message</label>
                                 <textarea
-                                    name="menssagge"
+                                    name="message"
                                     type="text-area"
-                                    id="menssagge"
+                                    id="message"
                                     onChange={handleChange}
-                                    values={values.menssagge}
+                                    values={values.message}
                                     className="my-3 rounded-2xl border-2 border-gray-200 min-h-[6rem] px-3"
                                 ></textarea>
-                                {errors.menssagge && <ErrorValidate menssage={errors.menssagge} />}
+                                {errors.message && <ErrorValidate menssage={errors.message} />}
 
                             </div>
                             <div className="mb-3 text-center my-3">
