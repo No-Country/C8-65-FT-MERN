@@ -34,8 +34,18 @@ export const DropDown = () => {
                             </Menu.Item>
 
                             <Menu.Item>
+                                <Link to='/orderhistory' className='group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover_text-white' style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                                    <img className='w-6 h-6 mr-3' src='./img/clipboard.png' alt="" />
+                                    Historial de ordenes</Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                                <Link to='/profile' className='group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover_text-white' style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                                    <img className='w-6 h-6 mr-3' src='./img/perfil.png' alt="" />
+                                    Perfil</Link>
+                            </Menu.Item>
+                            <Menu.Item>
                                 <Link className='group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover_text-white' to='#signout' onClick={signoutHandler} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-3">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                                     </svg>
                                     Sign Out</Link>
@@ -43,7 +53,7 @@ export const DropDown = () => {
                         </div>
                     ) : (
                         <Link className='group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 hover_text-white' to="/signin">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-3">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                             </svg>
 
