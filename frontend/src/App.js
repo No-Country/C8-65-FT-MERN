@@ -10,23 +10,26 @@ import SignUp from "./components/screens/SignUp";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Pasarella from "./components/screens/Pasarella";
 import Contact from "./components/screens/Contact";
+import AnimatedPage from "./components/AnimatedPage/AnimatedPage";
 const queryClient = new QueryClient();
 function App() {
   return (
     <div>
       <NavBar />
       <QueryClientProvider client={queryClient}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Example />} />
-          <Route path="/product">
-            <Route path=":product/" element={<Product />}></Route>
-          </Route>
-          <Route path="/signin" element={<SigIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/shipping" element={<Pasarella />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <AnimatedPage>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Example />} />
+            <Route path="/product">
+              <Route path=":product/" element={<Product />}></Route>
+            </Route>
+            <Route path="/signin" element={<SigIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/shipping" element={<Pasarella />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </AnimatedPage>
       </QueryClientProvider>
     </div>
   );
