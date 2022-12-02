@@ -36,8 +36,8 @@ const NavBar = () => {
                     <div className='absolute left-6 md:hidden top-6 scale-150'>
                         <AiOutlineMenu onClick={showMenu} className='scale-150 cursor-pointer' />
                     </div>
-                    <Link to='/'>
-                        <div className='flex flex-row w-auto'>
+                    <Link to='/' className='flex justify-center items-center'>
+                        <div className='flex flex-row w-auto h-full m-auto'>
                             <img className='object-contain h-10 w-10 m-2' src='./img/pills.png' alt="" />
                             <div className='flex flex-col '>
                                 <h2 className=' text-ms cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
