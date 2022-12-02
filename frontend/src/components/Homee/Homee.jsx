@@ -30,7 +30,7 @@ function Homee() {
               <div className="flex flex-col text-start items-start justify-start">
                 <h1 className="text-xl font-medium mb-4">Phamarcy Medicamentos</h1>
                 <p class="flex text-start w-[50%]">
-                  Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
+                  Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla. :3
                 </p>
 
                 <button className=" mt-5 border-2 border-celeste rounded-lg bg-celeste px-10 py-1 text-white hover:bg-celeste_oscuro">Buy</button>
