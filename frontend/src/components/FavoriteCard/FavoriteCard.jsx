@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import AnimatedPage from '../AnimatedPage/AnimatedPage'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { FcLike } from 'react-icons/fc'
+import { useContext } from 'react'
+import { Store } from '../../Store'
 const FavoriteCard = ({ data }) => {
-    console.log(data)
+    const { dispatch } = useContext(Store)
     const obj = {
         title: "Narueoasdaasdsaddas",
         price: "asd",
@@ -15,7 +17,7 @@ const FavoriteCard = ({ data }) => {
             <div className='bg-black min-w-[4rem] min-h-[4rem]' ></div>
             <h2 className='text-black text-[1.2rem]'>{obj.title}</h2>
             <button className="" onClick={() => setFav(!FavProduct)}>{FavProduct ? <FcLike className='h-7 w-7' /> : <AiOutlineHeart className='h-7 w-7' />}</button>
-        </div>
+        </div >
     )
 }
 
