@@ -15,6 +15,7 @@ import OrderScreen from "./components/screens/OrderScreen";
 import OrderHistoryScreen from "./components/screens/OrdenHistory";
 import ProfileScreen from "./components/screens/ProfileScreen";
 import Contact from "./components/screens/Contact";
+import Productos from "./components/screens/AllProducts";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/orderhistory" element={<OrderHistoryScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Productos />} />
         </Routes>
       </QueryClientProvider>
     </div>
