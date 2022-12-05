@@ -52,7 +52,7 @@ const data = {
             description: 'una nueva pastilla para tomar, cada ciertas horas',
             stock: 15,
             receta: true,
-            day: false,
+            day: true,
             isFavorite: false,
 
         },
@@ -77,7 +77,7 @@ const data = {
             description: 'una nueva pastilla para tomar, cada ciertas horas',
             stock: 15,
             receta: true,
-            day: false,
+            day: true,
             isFavorite: false,
         }, {
             name: 'Amlodipinaa',
@@ -135,7 +135,7 @@ const data = {
             description: 'una nueva pastilla para tomar, cada ciertas horas',
             stock: 15,
             receta: true,
-            day: false,
+            day: true,
             isFavorite: false,
         },
     ],
