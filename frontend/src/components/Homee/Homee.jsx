@@ -1,6 +1,7 @@
 import { IconContext } from 'react-icons/lib';
 import { MdOutlineVerifiedUser, MdOutlineSavings, MdOutlineComputer } from "react-icons/md";
 import { CiDeliveryTruck } from "react-icons/ci"
+import { Link } from 'react-router-dom';
 
 function Homee() {
   return (
@@ -33,7 +34,9 @@ function Homee() {
                   Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
                 </p>
 
-                <button className=" mt-5 border-2 border-celeste rounded-lg bg-celeste px-10 py-1 text-white hover:bg-celeste_oscuro">Buy</button>
+                <Link to='/products'>
+                  <button className=" mt-5 border-2 border-celeste rounded-lg bg-celeste px-10 py-1 text-white hover:bg-celeste_oscuro">Buy</button>
+                </Link>
               </div>
             </div>
           </div>

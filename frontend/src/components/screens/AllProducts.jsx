@@ -2,52 +2,76 @@ import axios from 'axios';
 import React, { useEffect, useReducer } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Card from "../productCard/ProductCard";
-const reducer = (state, action) => {
-    switch (action.type) {
-        case "FETCH_REQUEST":
-            return { ...state, loading: true };
-        case "FETCH_SUCCESS":
-            return { ...state, products: action.payload, loading: false };
-        case "FETCH_FAIL":
-            return { ...state, loading: false, error: action.payload };
-        default:
-            return state;
-    }
-};
+import Filter from '../Filter/Filter';
+import List from '../List/List';
+import { styled } from "@mui/material/styles";
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
+import AnimatedPage from '../AnimatedPage/AnimatedPage';
+
 const Productos = () => {
-    const [{ loading, error, products }, dispatch] = useReducer(reducer, {
-        products: [],
-        loading: true,
-        error: "",
-    });
+
+
+
+
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [list, setList] = useState([]);
+    const [inputSearch, setInputSearch] = useState("");
+
+    const handleSelectCategory = (event, value) =>
+        !value ? null : setSelectedCategory(value);
+
+    const filtrarTodos = () => {
+        setSelectedCategory(null)
+    }
+
+
+
 
 
     useEffect(() => {
-        const fetchData = async () => {
-            dispatch({ type: "FETCH_REQUEST" });
-            try {
-                const result = await axios.get("/api/products");
-                dispatch({ type: "FETCH_SUCCESS", payload: result.data });
-            } catch (err) {
-                dispatch({ type: "FETCH_FAIL", payload: err.message });
+        const applyFilters = async () => {
+            //let updateProductList = productsList;
+            let updateProductList = await axios.get("/api/products");
+            let result = updateProductList.data;
+
+            //Category Filters
+            if (selectedCategory) {
+                result = result.filter((item) => item.category === selectedCategory);
             }
 
+            // Search Filter
+            if (inputSearch) {
+                result = result.filter(
+                    (item) =>
+                        item.title.toLowerCase().search(inputSearch.toLowerCase().trim()) !==
+                        -1
+                );
+            }
 
+            setList(result);
         };
-        fetchData();
-
-    }, []);
+        applyFilters();
+    }, [selectedCategory, inputSearch]);
     return (
-
-        <div className='container w-[75%] flex flex-col m-auto my-6'>
-            <h2 className='font-semibold text-2xl'>Todos los productos</h2>
-            <div className='grid grid-cols-3 gap-4 my-5'>
-                {products.map((product) => (
-                    <Card product={product} className='max-h-[10rem]' ></Card>
-                ))}
+        <AnimatedPage>
+            <div className='container w-[75%] flex flex-col m-auto my-6'>
+                <h2 className='font-semibold text-2xl text-center'>Todos los productos</h2>
+                <div className="flex flex-col">
+                    <Filter
+                        selectedCategory={selectedCategory}
+                        selectToggle={handleSelectCategory}
+                    />
+                    <div className='w-auto flex items-center justify-center'>
+                        <ToggleButtonGroup className='bg-[#B3E8E5] ' exclusive>
+                            <ToggleButton onClick={filtrarTodos} value="left" className='' >Ver todos</ToggleButton>
+                        </ToggleButtonGroup>
+                    </div>
+                </div>
+                <div className="h-col">
+                    <List list={list} />
+                </div>
             </div>
-        </div>
+        </AnimatedPage>
     )
 }
 

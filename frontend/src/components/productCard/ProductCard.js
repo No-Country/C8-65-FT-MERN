@@ -12,8 +12,16 @@ import { Link } from "react-router-dom";
 import { Store } from "../../Store";
 import axios from "axios";
 import { IconContext } from "react-icons/lib";
+import { motion } from "framer-motion";
 
 function Card(props) {
+
+  const variants = {
+    whileInViewText: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+    whileInViewText2: { y: 0, opacity: 1, transition: { duration: 0.9 } },
+    whileInViewText3: { y: 0, opacity: 1, transition: { duration: 1.2 } },
+    initialText2: { y: 100, opacity: 0 }
+  };
   const [favorito, setFavorito] = useState(false);
 
   const handleFavourite = () => {
@@ -41,7 +49,11 @@ function Card(props) {
   };
   return (
     <IconContext.Provider value={{ color: "#9E9E9E" }}>
-      <div
+      <motion.div
+        variants={variants}
+        initial="initialText2"
+        whileInView="whileInViewText"
+        viewport="viewport"
         key={product.id}
         className=" w-auto max-h-[30rem] flex flex-col bg-white border-gray-200
   p-4 border-2 rounded-2xl shadow-slate-200 shadow-md"
@@ -100,7 +112,7 @@ function Card(props) {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </IconContext.Provider>
   );
 }
