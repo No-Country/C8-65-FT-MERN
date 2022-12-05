@@ -124,7 +124,7 @@ const Orden = () => {
                                 Editar informacion
                             </Link>
                         </div>
-                        <div className=' w-[30%] px-8 py-10 mx-auto'>
+                        <div className=' md:w-[30%] w-[100%] px-8 py-10 mx-auto'>
                             <div id="summary" className="w-auto px-8 py-10 mx-auto">
                                 <h1 className="font-semibold text-2xl  pb-8">Resumen de la compra</h1>
                                 <div className="">

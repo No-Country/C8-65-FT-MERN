@@ -37,8 +37,8 @@ const NavBar = () => {
                         <div className='flex flex-row w-auto h-full m-auto'>
                             <img className=' h-10 w-10 m-auto mr-3' src='https://res.cloudinary.com/dbovldjfc/image/upload/v1669327355/farmacia/pills_llhrbs.png' alt="" />
                             <div className='flex flex-col items-center justify-center '>
-                                <h2 className=' text-ms cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
-                                <p className='text-center font-bold text-[#0097a7]'>Medicamentos</p>
+                                <h2 className=' md:text-ms text-xs cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
+                                <p className='text-center font-bold text-[#0097a7] md:text-ms text-xs'>Medicamentos</p>
 
                             </div>
 
