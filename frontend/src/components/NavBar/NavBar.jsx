@@ -38,8 +38,8 @@ const NavBar = () => {
                     </div>
                     <Link to='/' className='flex justify-center items-center'>
                         <div className='flex flex-row w-auto h-full m-auto'>
-                            <img className='object-contain h-10 w-10 m-2' src='./img/pills.png' alt="" />
-                            <div className='flex flex-col '>
+                            <img className=' h-10 w-10 m-auto mr-3' src='https://res.cloudinary.com/dbovldjfc/image/upload/v1669327355/farmacia/pills_llhrbs.png' alt="" />
+                            <div className='flex flex-col items-center justify-center '>
                                 <h2 className=' text-ms cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
                                 <p className='text-center font-bold text-[#0097a7]'>Medicamentos</p>
 
@@ -58,7 +58,7 @@ const NavBar = () => {
                         <li className='md:ml-8  no-underline md:my-0 my-7 block align-middle'></li>
                         <Link to='/cart' className='relative flex mx-3 '>
                             <AiOutlineShoppingCart className='flex-1  fill-current h-7 w-7 ' />
-                            <span className='"absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center' pill>{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</span>
+                            <span className='"absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center'>{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</span>
                         </Link>
                         <li className='md:ml-8  no-underline md:my-0 my-7'></li>
                         <Link to='/contact' className='mx-3'><AiOutlinePhone className='h-7 w-7' /></Link>
@@ -66,10 +66,10 @@ const NavBar = () => {
                 </div>
                 <ul className='hidden md:flex gap-8 p-6 uppercase bg-[#24BAA0] justify-around text-white pioridad z-[-1]'>
 
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/categorias.png' alt='' className='h-7 w-7' /></Link>Categorias</li>
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_garganta.png' alt='' className='h-7 w-7' /></Link>Dolor de garganta</li>
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_muelas.png' alt='' className='h-7 w-7' /></Link>Dolor de muelas</li>
-                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='./img/dolor_de_cabeza.png' alt='' className='h-7 w-7' /></Link>Dolor de cabeza</li>
+                    <li className='flex flew-row'><Link to='/products' className='mx-3'><img src='https://res.cloudinary.com/dbovldjfc/image/upload/v1670213551/farmacia/categorias_y4evcd.png' alt='' className='h-7 w-7' /></Link>Productos</li>
+                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='https://res.cloudinary.com/dbovldjfc/image/upload/v1670213552/farmacia/dolor_de_garganta_dcgcpj.png' alt='' className='h-7 w-7' /></Link>Dolor de garganta</li>
+                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='https://res.cloudinary.com/dbovldjfc/image/upload/v1670213551/farmacia/dolor_de_muelas_v2x08y.png' alt='' className='h-7 w-7' /></Link>Dolor de muelas</li>
+                    <li className='flex flew-row'><Link to='/' className='mx-3'><img src='https://res.cloudinary.com/dbovldjfc/image/upload/v1670213551/farmacia/dolor_de_cabeza_tjdjjl.png' alt='' className='h-7 w-7' /></Link>Dolor de cabeza</li>
                 </ul>
                 <MenuItems showMenu={showMenu} active={active} />
 

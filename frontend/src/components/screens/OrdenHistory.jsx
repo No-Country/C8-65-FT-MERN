@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../../Store';
 import AnimatedPage from '../AnimatedPage/AnimatedPage';
+import Loading from '../Loading/Loading';
 
 
 const reducer = (state, action) => {
@@ -60,7 +61,7 @@ export default function OrderHistoryScreen() {
 
                         <h1 className='text-center m-7 font-semibold'>Historial de ordenes</h1>
                         {loading ? (
-                            <p>Cargando...</p>
+                            <Loading />
                         ) : error ? (
                             <span>Error</span>
                         ) : (

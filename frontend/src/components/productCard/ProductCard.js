@@ -75,13 +75,19 @@ function Card(props) {
 
         <div className="flex row-auto mt-2 space-x-14">
           <div className="">
-            <p className="mt-2 ml-3">$ {product.precio}</p>
-            <p className="ml-3 text-gray-500 line-through">$5,550</p>
+            {product.day ? (
+              <div>
+                <p className="mt-2 ml-3">$ {product.precio * 0.30}</p>
+                <p className="ml-3 text-gray-500 line-through">{product.precio}</p>
+              </div>
+            ) : (
+              <p className="mt-2 ml-3">$ {product.precio}</p>
+            )}
           </div>
 
           <div className="h-11 flex border-2 mt-2 border-celeste rounded-lg hover:border-celeste_oscuro">
             <button
-              className=" w-28 bg-celeste  text-white font-semibold rounded-md hover:bg-celeste_oscuro"
+              className=" w-28 bg-celeste  text-white font-semibold rounded-md hover:bg-celeste_oscuro transition ease-in-out delay-100"
               onClick={() => addToCartHandler(product)}
             >
               Buy
