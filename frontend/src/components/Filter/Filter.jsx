@@ -24,11 +24,7 @@ const Filter = ({ selectedCategory, selectToggle }) => {
         <div className='f-container'>
             <div className="filter-group">
                 <MainCategory options={categoryList} value={selectedCategory} selectToggle={selectToggle} />
-
             </div>
-
-
-
         </div>
     )
 }
