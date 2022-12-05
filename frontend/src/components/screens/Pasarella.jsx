@@ -77,7 +77,7 @@ const Pasarella = () => {
                                 onChange={(e) => setFullName(e.target.value)}
                                 required
                                 type='text'
-                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
                         </div>
                         <div className='flex flex-col' controlId='address'>
@@ -87,7 +87,7 @@ const Pasarella = () => {
                                 onChange={(e) => setAddress(e.target.value)}
                                 required
                                 type='text'
-                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
                         </div>
                         <div className="flex flex-col" controlId="city">
@@ -97,7 +97,7 @@ const Pasarella = () => {
                                 onChange={(e) => setCity(e.target.value)}
                                 required
                                 type='text'
-                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
                         </div>
                         <div className="flex flex-col" controlId="postalCode">
@@ -107,7 +107,7 @@ const Pasarella = () => {
                                 onChange={(e) => setPostalCode(e.target.value)}
                                 required
                                 type='number'
-                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
                         </div>
                         <div className="flex flex-col" controlId="country">
@@ -117,7 +117,7 @@ const Pasarella = () => {
                                 onChange={(e) => setCountry(e.target.value)}
                                 required
                                 type='text'
-                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
 
                         </div>
@@ -128,7 +128,7 @@ const Pasarella = () => {
                                 onChange={(e) => setemail(e.target.value)}
                                 required
                                 type='text'
-                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
 
                         </div>
@@ -138,13 +138,13 @@ const Pasarella = () => {
                                 value={numero}
                                 onChange={(e) => setNumero(e.target.value)}
                                 type='text'
-                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
 
                         </div>
                         <div className="mb-3 my-3 text-center">
                             <button
-                                className='bg-[#00bcd4] p-4 rounded-2xl w-[50%] text-white hover:bg-[#0097a7] trasition-all duration-300 ease-in'
+                                className='bg-[#00bcd4] p-4 rounded-2xl w-[50%] text-white hover:bg-[#0097a7] trasition-all duration-300 ease-in md:text-lg text-sm'
                             >
                                 Continue
                             </button>

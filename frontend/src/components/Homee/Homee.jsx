@@ -8,9 +8,9 @@ function Homee() {
     <IconContext.Provider value={{ color: '#24BAA0' }}>
 
       <div class=" grid grid-cols-1 mt-5 ">
-        <div class="flex">
-          <div class="w-2/5 flex flex-col place-items-center place-content-center ">
-            <div className="ml-10 flex flex-col items-start ">
+        <div class="flex flex-col md:flex-row">
+          <div class=" w-full md:w-2/5 flex flex-col place-items-center place-content-center md:my-0 my-10">
+            <div className="ml-10 flex flex-col md:items-start items-center  ">
               <div className="flex row-auto">
                 <img
                   className="flex"
@@ -28,7 +28,7 @@ function Homee() {
                 </div>
               </div>
 
-              <div className="flex flex-col text-start items-start justify-start">
+              <div className="flex flex-col text-start md:items-start md:justify-start items-center justify-center ">
                 <h1 className="text-xl font-medium mb-4">Phamarcy Medicamentos</h1>
                 <p class="flex text-start w-[50%]">
                   Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
@@ -41,12 +41,13 @@ function Homee() {
             </div>
           </div>
 
-          <div class="w-3/5 h-full flex place-content-center">
-            <img src='./img/medicine.svg' width="650px" height="400px" alt="" srcset="" />
+          <div class="w-full md:w-3/5 h-full flex place-content-center md:my-0 my-10">
+            <img src='./img/medicine.svg' alt="" srcset="" className='md:w-[650px] md:h-[400px] w-[550px] h-[300px]' />
           </div>
         </div>
 
-        <div class="w-full h-28 mt-10 flex items-center justify-center space-x-8">
+        <div class="w-full  md:h-28 h-auto mt-10 flex md:items-center md:justify-center space-y-6 md:flex-row
+        flex-col md:my-0 my-5 items-start justify-start">
 
           <div className=" flex row">
             <MdOutlineSavings className="w-28 h-11"></MdOutlineSavings>
