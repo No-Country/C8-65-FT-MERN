@@ -31,7 +31,7 @@ const NavBar = () => {
     console.log(userInfo);
     return (
         <IconContext.Provider value={{ color: '#2ca289' }}>
-            <nav className=' shadow-md w-full sticky top-0 left-0' style={{ 'zIndex': 999 }} >
+            <nav className=' shadow-md w-full top-0 left-0' style={{ 'zIndex': 999 }} >
                 <div className='flex md:justify-between justify-around  bg-white py-2 md:px-10 px-7'>
                     <div className='absolute left-6 md:hidden top-6 scale-150'>
                         <AiOutlineMenu onClick={showMenu} className='scale-150 cursor-pointer' />
