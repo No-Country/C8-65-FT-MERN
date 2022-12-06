@@ -16,6 +16,7 @@ import OrderHistoryScreen from "./components/screens/OrdenHistory";
 import ProfileScreen from "./components/screens/ProfileScreen";
 import Contact from "./components/screens/Contact";
 import Productos from "./components/screens/AllProducts";
+import Footer from "./components/Footer/Footer";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/products" element={<Productos />} />
         </Routes>
       </QueryClientProvider>
+      <Footer></Footer>
     </div>
   );
 }

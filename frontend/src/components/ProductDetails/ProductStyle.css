@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-<<<<<<< HEAD
     .quantity-btn {
         @apply text-celeste rounded-lg text-4xl
     }
@@ -13,9 +12,3 @@
     height:90vh;
     margin-top:0;
 }*/
-=======
-  .quantity-btn {
-    @apply text-celeste rounded-lg text-4xl md:text-5xl select-none;
-  }
-}
->>>>>>> 99c7ad1181c3e23b08b4341bbc7f52baa474e094

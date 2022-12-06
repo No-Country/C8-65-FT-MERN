@@ -40,13 +40,8 @@ const ProductDetails = (data) => {
     }, [addCartHandle])
 
     return (
-<<<<<<< HEAD
         <article className="w-[100%] md:p-10">
             <div className="w-full flex justify-between flex-col items-center gap-2 mb-6  md:flex-row md:items-start">
-=======
-        <article className="w-[100%] lg:w-10/12 lg:p-10">
-            <div className="w-full flex justify-between flex-col items-center gap-2 mb-6  lg:flex-row lg:items-start">
->>>>>>> 99c7ad1181c3e23b08b4341bbc7f52baa474e094
                 <img
                     src={image}
                     alt={name}
@@ -55,11 +50,7 @@ const ProductDetails = (data) => {
                 <div className="w-[80%] lg:w-[40%]">
                     <h2 className="font-bold font-mono text-3xl md:text-4xl lg:text-4xl text-center lg:text-start  ">{name}</h2>
                     <div
-<<<<<<< HEAD
                         className="flex flex-col  md:items-start mt-[1.2rem] 
-=======
-                        className="flex flex-col md:items-center  lg:items-start mt-[1.2rem] h-full
->>>>>>> 99c7ad1181c3e23b08b4341bbc7f52baa474e094
                 gap-[1rem]"
                     >
                         <span className=" font-semibold text-xl md:text-[1.5rem]">${precio}</span>
