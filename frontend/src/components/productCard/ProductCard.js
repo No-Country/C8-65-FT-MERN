@@ -112,7 +112,6 @@ function Card(props) {
             <img
               className="w-9 h-9 ml-2 mr-2"
               src={cart}
-              alt={product.name}
             />
           </div>
         </div>
