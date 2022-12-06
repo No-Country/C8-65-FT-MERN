@@ -65,26 +65,13 @@ const Orden = () => {
     });
     const { cart, userInfo } = state;
     cart.itemsPrice = cart.cartItems.reduce((a, c) => a + c.quantity * c.precio, 0)
-    const alerta = () => {
-        toast('Orden generada con exito!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-    }
 
     cart.totalPrice = cart.itemsPrice
-    console.log(cart);
     return (
         <>
+            <Checkout step1 step2 step3 step4></Checkout>
             <AnimatedPage>
                 <div className='lg:container  lg:mx-auto lg:mt-10 my-7 px-5 '>
-                    {/* <Checkout step1 step2 step3 step4></Checkout> */}
 
                     <div className='flex md:my-10 md:flex-row flex-col'>
 
@@ -96,7 +83,7 @@ const Orden = () => {
                                 <div>
                                     <h3>Direccion</h3>
                                     <div>
-                                        <strong>Nombre:</strong> {cart.shippingAddress.fullName} <br />
+                                        <strong>Nombre: </strong> {cart.shippingAddress.fullName} <br />
                                         <strong>Direccion: </strong> {cart.shippingAddress.address},
                                         {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}
                                         ,{cart.shippingAddress.country}
@@ -104,17 +91,15 @@ const Orden = () => {
                                     </div>
                                 </div>
                             </div>
-                            <Card className='mb-3'>
-                                <Card.Body>
-                                    <Card.Title>Pago</Card.Title>
-                                    <Card.Text>
-                                        <strong>Metodo de pago:</strong>{cart.paymentMethod}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
+                            <div className='mb-3'>
+                                <div>
+                                    <strong>Metodo de pago: </strong>{cart.paymentMethod}
+                                </div>
+
+                            </div>
 
                             {cart.cartItems.map((item) => (
-                                <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 ">
+                                <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 " key={item._id}>
                                     <div className="flex w-4/5">
                                         <div className="w-20">
                                             <img className="md:h-20 md:w-20 h-20 w-20" src={item.image} alt="" />
@@ -138,54 +123,26 @@ const Orden = () => {
                                 Editar informacion
                             </Link>
                         </div>
-                        <div className='md:w-1/4 w-[80%] px-8 py-10 mx-auto'>
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>Suma</Card.Title>
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item>
-                                            <Row>
-                                                <Col>Total de la compra</Col>
-                                                <Col>${cart.totalPrice}</Col>
-                                            </Row>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item>
-                                            <div className="d-grid">
-                                                <button
-                                                    onClick={placeOrderHandler}
-                                                    disabled={cart.cartItems.length === 0}
-                                                    className='border rounded-2xl bg-[#00ACC1] font-semibold hover:bg-[#0097A7] py-2 text-sm text-white uppercase w-full'
-                                                >
-                                                    Generar Orden
-                                                </button>
-                                                <button
-                                                    onClick={alerta}
-                                                    disabled={cart.cartItems.length === 0}
-                                                    className='border rounded-2xl bg-[#00ACC1] font-semibold hover:bg-[#0097A7] py-2 text-sm text-white uppercase w-full'
-                                                >
-                                                    alerta
-                                                </button>
-                                            </div>
-                                            {loading && <p>Cargando...</p>}
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Card.Body>
-
-                            </Card>
+                        <div className=' md:w-[30%] w-[100%] px-8 py-10 mx-auto'>
+                            <div id="summary" className="w-auto px-8 py-10 mx-auto">
+                                <h1 className="font-semibold text-2xl  pb-8">Resumen de la compra</h1>
+                                <div className="">
+                                    <div className="flex font-semibold justify-between py-6 text-sm uppercase">
+                                        <span>Total de la compra</span>
+                                        <span>${cart.totalPrice}</span>
+                                    </div>
+                                    <button
+                                        onClick={placeOrderHandler}
+                                        disabled={cart.cartItems.length === 0}
+                                        className='border rounded-2xl bg-[#00ACC1] font-semibold hover:bg-[#0097A7] py-2 text-sm text-white uppercase w-full'
+                                    >
+                                        Generar Orden
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <ToastContainer
-                    position="top-center"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    theme="light" />
             </AnimatedPage>
         </>
     )

@@ -12,8 +12,17 @@ import { Link } from "react-router-dom";
 import { Store } from "../../Store";
 import axios from "axios";
 import { IconContext } from "react-icons/lib";
+import { motion } from "framer-motion";
 
 function Card(props) {
+
+  const variants = {
+    whileInViewText: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+    whileInViewText2: { y: 0, opacity: 1, transition: { duration: 0.9 } },
+    whileInViewText3: { y: 0, opacity: 1, transition: { duration: 1.2 } },
+    initialText2: { y: 100, opacity: 0 }
+  };
+
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { product } = props;
   const findFavorite = state.favorite.find((fav) => fav._id === product._id);
@@ -43,8 +52,11 @@ function Card(props) {
   };
   return (
     <IconContext.Provider value={{ color: "#9E9E9E" }}>
-      <div
-        key={product.id}
+      <motion.div
+        variants={variants}
+        initial="initialText2"
+        whileInView="whileInViewText"
+        viewport="viewport"
         className=" w-auto max-h-[30rem] flex flex-col bg-white border-gray-200
   p-4 border-2 rounded-2xl shadow-slate-200 shadow-md"
       >
@@ -63,7 +75,7 @@ function Card(props) {
           className=" w-[200px] h-[200px] mt-2 self-center"
           src={product.image}
           alt=""
-          srcset=""
+
         />
         <Link to={`/product/${product.slug}`}>
           <h2 className="flex self-center mt-3  font-medium text-lg">
@@ -80,13 +92,19 @@ function Card(props) {
 
         <div className="flex row-auto mt-2 space-x-14">
           <div className="">
-            <p className="mt-2 ml-3">$ {product.precio}</p>
-            <p className="ml-3 text-gray-500 line-through">$5,550</p>
+            {product.day ? (
+              <div>
+                <p className="mt-2 ml-3">$ {product.precio * 0.30}</p>
+                <p className="ml-3 text-gray-500 line-through">{product.precio}</p>
+              </div>
+            ) : (
+              <p className="mt-2 ml-3">$ {product.precio}</p>
+            )}
           </div>
 
           <div className="h-11 flex border-2 mt-2 border-celeste rounded-lg hover:border-celeste_oscuro">
             <button
-              className=" w-28 bg-celeste  text-white font-semibold rounded-md hover:bg-celeste_oscuro"
+              className=" w-28 bg-celeste  text-white font-semibold rounded-md hover:bg-celeste_oscuro transition ease-in-out delay-100"
               onClick={() => addToCartHandler(product)}
             >
               Buy
@@ -95,11 +113,10 @@ function Card(props) {
               className="w-9 h-9 ml-2 mr-2"
               src={cart}
               alt={product.name}
-              srcset=""
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </IconContext.Provider>
   );
 }

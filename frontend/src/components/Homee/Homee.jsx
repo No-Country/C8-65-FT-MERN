@@ -1,19 +1,20 @@
 import { IconContext } from 'react-icons/lib';
 import { MdOutlineVerifiedUser, MdOutlineSavings, MdOutlineComputer } from "react-icons/md";
 import { CiDeliveryTruck } from "react-icons/ci"
+import { Link } from 'react-router-dom';
 
 function Homee() {
   return (
     <IconContext.Provider value={{ color: '#24BAA0' }}>
 
-      <div class=" grid grid-cols-1 mt-5 ">
-        <div class="flex">
-          <div class="w-2/5 flex flex-col place-items-center place-content-center ">
-            <div className="ml-10 flex flex-col items-start ">
+      <div className=" grid grid-cols-1 mt-5 ">
+        <div className="flex flex-col md:flex-row">
+          <div className=" w-full md:w-2/5 flex flex-col place-items-center place-content-center md:my-0 my-10">
+            <div className="ml-10 flex flex-col md:items-start items-center  ">
               <div className="flex row-auto">
                 <img
                   className="flex"
-                  src="./img/pills.png"
+                  src="https://res.cloudinary.com/dbovldjfc/image/upload/v1669327355/farmacia/pills_llhrbs.png"
                   width="50px"
                   height="50px"
                   alt="" />
@@ -27,23 +28,26 @@ function Homee() {
                 </div>
               </div>
 
-              <div className="flex flex-col text-start items-start justify-start">
+              <div className="flex flex-col text-start md:items-start md:justify-start items-center justify-center ">
                 <h1 className="text-xl font-medium mb-4">Phamarcy Medicamentos</h1>
-                <p class="flex text-start w-[50%]">
-                  Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla. :3
+                <p className="flex text-start w-[50%]">
+                  Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
                 </p>
 
-                <button className=" mt-5 border-2 border-celeste rounded-lg bg-celeste px-10 py-1 text-white hover:bg-celeste_oscuro">Buy</button>
+                <Link to='/products'>
+                  <button className=" mt-5 border-2 border-celeste rounded-lg bg-celeste px-10 py-1 text-white hover:bg-celeste_oscuro">Buy</button>
+                </Link>
               </div>
             </div>
           </div>
 
-          <div class="w-3/5 h-full flex place-content-center">
-            <img src='./img/medicine.svg' width="650px" height="400px" alt="" srcset="" />
+          <div className="w-full md:w-3/5 h-full flex place-content-center md:my-0 my-10">
+            <img src='./img/medicine.svg' alt="" className='md:w-[650px] md:h-[400px] w-[550px] h-[300px]' />
           </div>
         </div>
 
-        <div class="w-full h-28 mt-10 flex items-center justify-center space-x-8">
+        <div className="w-full  md:h-28 h-auto mt-10 flex md:items-center md:justify-center space-y-6 md:flex-row
+        flex-col md:my-0 my-5 items-start justify-start">
 
           <div className=" flex row">
             <MdOutlineSavings className="w-28 h-11"></MdOutlineSavings>

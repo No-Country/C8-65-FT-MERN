@@ -50,11 +50,13 @@ const Home = () => {
     }, []);
 
 
-    console.log(products);
+
     return (
         <>
-            <AnimatedPage>
+
+            <AnimatedPage className='w-[85%]'>
                 <Homee />
+                <h3 className="font-semibold text-2xl ml-[8em]">Productos del dia</h3>
                 <Swiper
                     slidesPerView={1}
                     loop={true}
@@ -75,8 +77,9 @@ const Home = () => {
                 >{
 
                         <div className="flex justify-center items-center h-screen space-x-5">
+
                             {products.map((product) => (
-                                <SwiperSlide className='flex items-center justify-center space-x-5 mt-[3rem]' key={product._id}>
+                                product.day && <SwiperSlide className='flex items-center justify-center space-x-5 mt-[3rem]' key={product._id}>
                                     <Card product={product} ></Card>
                                 </SwiperSlide>
                             ))}
