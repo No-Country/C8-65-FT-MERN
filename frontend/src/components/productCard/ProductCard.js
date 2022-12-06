@@ -54,7 +54,6 @@ function Card(props) {
         initial="initialText2"
         whileInView="whileInViewText"
         viewport="viewport"
-        key={product.id}
         className=" w-auto max-h-[30rem] flex flex-col bg-white border-gray-200
   p-4 border-2 rounded-2xl shadow-slate-200 shadow-md"
       >
@@ -70,7 +69,7 @@ function Card(props) {
           className=" w-[200px] h-[200px] mt-2 self-center"
           src={product.image}
           alt=""
-          srcset=""
+
         />
         <Link to={`/product/${product.slug}`}>
           <h2 className="flex self-center mt-3  font-medium text-lg">
@@ -108,7 +107,6 @@ function Card(props) {
               className="w-9 h-9 ml-2 mr-2"
               src={cart}
               alt={product.name}
-              srcset=""
             />
           </div>
         </div>

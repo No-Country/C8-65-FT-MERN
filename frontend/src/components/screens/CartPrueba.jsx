@@ -30,7 +30,6 @@ function Example() {
         navigate('/signin?redirect=/shipping');
     }
 
-    console.log(cartItems);
     return (
         <>
             <AnimatedPage>
@@ -50,7 +49,7 @@ function Example() {
                                         <h1 className="font-semibold md:text-2xl">Carro</h1>
                                     </div>
                                     {cartItems.map((item) => (
-                                        <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 ">
+                                        <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 " key={item._id}>
                                             <div className="flex w-2/5">
                                                 <div className="w-20">
                                                     <img className="md:h-28 md:w-28 h-20 w-20" src={item.image} alt="" />
