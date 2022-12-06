@@ -7,7 +7,7 @@ import { Autoplay, Thumbs, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../../Store";
 import axios from "axios";
@@ -22,17 +22,14 @@ function Card(props) {
     whileInViewText3: { y: 0, opacity: 1, transition: { duration: 1.2 } },
     initialText2: { y: 100, opacity: 0 }
   };
-  const [favorito, setFavorito] = useState(false);
-
-  const handleFavourite = () => {
-    console.log(product);
-    product.isFavorite = !product.isFavorite;
-    setFavorito(!favorito);
-  };
-
-  const { product } = props;
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { product } = props;
+  const findFavorite = state.favorite.find((fav) => fav._id === product._id);
+  const [favorito, setFavorito] = useState(false);
+  useEffect(() => {
+    setFavorito(findFavorite ? findFavorite.isFavorite : false);
+  }, [findFavorite]);
   const {
     cart: { cartItems },
   } = state;
@@ -47,6 +44,12 @@ function Card(props) {
     // se usa ese nombre para no confundir con "dispatch"
     ctxDispatch({ type: "ADD_TO_CART", payload: { ...item, quantity } });
   };
+
+  const handleFavourite = () => {
+    if (!favorito)
+      return ctxDispatch({ type: "ADD_TO_FAVORITE", payload: product });
+    ctxDispatch({ type: "DELETE_TO_FAVORITE", payload: product });
+  };
   return (
     <IconContext.Provider value={{ color: "#9E9E9E" }}>
       <motion.div
@@ -58,11 +61,14 @@ function Card(props) {
   p-4 border-2 rounded-2xl shadow-slate-200 shadow-md"
       >
         {favorito ? (
-          <FcLike onClick={handleFavourite} className="w-8 h-8 flex self-end" />
+          <FcLike
+            onClick={handleFavourite}
+            className="w-8 h-8 flex self-end cursor-pointer"
+          />
         ) : (
           <AiOutlineHeart
             onClick={handleFavourite}
-            className="w-8 h-8 flex self-end"
+            className="w-8 h-8 flex self-end cursor-pointer"
           />
         )}
         <img

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const validationContact = (values) => {
   let error = {};
@@ -25,12 +26,22 @@ export const validationContact = (values) => {
   return error;
 };
 
-export const HandleSubmitContact = (values) => {
+export const HandleSubmitContact = async (values, onSubmitProps) => {
   const UserMessage = {
     name: values.name,
     email: values.email,
     message: values.message.trim(),
   };
-  axios.post("/api/message/send", UserMessage);
-  console.log(UserMessage);
+  onSubmitProps.resetForm();
+  const already = JSON.parse(sessionStorage.getItem("tokenForm"));
+  if (already === 3) {
+    return toast.error("Ya ha enviado muchos mensajes vuelva más tarde");
+  }
+  try {
+    await axios.post("/api/message/send", UserMessage);
+    sessionStorage.setItem("tokenForm", JSON.stringify(already + 1));
+    toast.success("Mensaje Enviado");
+  } catch (error) {
+    toast.error(error);
+  }
 };

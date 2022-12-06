@@ -41,7 +41,11 @@ const NavBar = () => {
                     <ul className='flex items-center md:static bg-white left-0 w-auto md:w-auto pl-0 pl-9 trasition-all duration-500 ease-in    '>
 
                         <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto'></li>
+
+                        <Link to='/favorite' className='mx-3'><AiOutlineHeart className='h-7 w-7' /></Link>
+
                         <Link to='/products' className='mx-3'><AiOutlineShop className='h-7 w-7' /></Link>
+
                         <li className='md:ml-8  no-underline md:my-0 my-7'></li>
                         <DropDown />
                         <li className='md:ml-8  no-underline md:my-0 my-7 block align-middle'></li>
