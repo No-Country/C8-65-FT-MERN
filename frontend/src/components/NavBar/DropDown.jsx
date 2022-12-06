@@ -17,7 +17,6 @@ export const DropDown = () => {
         localStorage.removeItem('shippingAddress');
     }
 
-    console.log(userInfo);
     return (
         <div className="  flex justify-end p-4">
             <Menu as="div" className="relative">

@@ -14,21 +14,14 @@ const NavBar = () => {
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { cart, userInfo } = state;
 
-    const signoutHandler = () => {
-        ctxDispatch({ type: 'USER_SIGNOUT' });
-        localStorage.removeItem('userInfo');
-        localStorage.removeItem('shippingAddress');
-    }
 
 
-    const [open, setOpen] = useState(true)
 
-    const [active, setActive] = useState(false)
 
-    const showMenu = () => {
-        setActive(!active)
-    }
-    console.log(userInfo);
+
+
+
+
     return (
         <IconContext.Provider value={{ color: '#2ca289' }}>
             <nav className=' shadow-md w-full sticky top-0 left-0' style={{ 'zIndex': 999 }} >

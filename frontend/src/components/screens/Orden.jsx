@@ -67,7 +67,6 @@ const Orden = () => {
     cart.itemsPrice = cart.cartItems.reduce((a, c) => a + c.quantity * c.precio, 0)
 
     cart.totalPrice = cart.itemsPrice
-    console.log(cart);
     return (
         <>
             <Checkout step1 step2 step3 step4></Checkout>
@@ -100,7 +99,7 @@ const Orden = () => {
                             </div>
 
                             {cart.cartItems.map((item) => (
-                                <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 ">
+                                <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 " key={item._id}>
                                     <div className="flex w-4/5">
                                         <div className="w-20">
                                             <img className="md:h-20 md:w-20 h-20 w-20" src={item.image} alt="" />
