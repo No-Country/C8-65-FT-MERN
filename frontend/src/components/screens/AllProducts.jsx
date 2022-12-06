@@ -3,11 +3,11 @@ import React, { useEffect, useReducer } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Filter from '../Filter/Filter';
-import List from '../List/List';
 import { styled } from "@mui/material/styles";
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import AnimatedPage from '../AnimatedPage/AnimatedPage';
-
+import Search from '../Search';
+import List from '../List/List'
 const Productos = () => {
 
 
@@ -30,7 +30,7 @@ const Productos = () => {
 
     useEffect(() => {
         const applyFilters = async () => {
-            //let updateProductList = productsList;
+
             let updateProductList = await axios.get("/api/products");
             let result = updateProductList.data;
 
@@ -41,11 +41,7 @@ const Productos = () => {
 
             // Search Filter
             if (inputSearch) {
-                result = result.filter(
-                    (item) =>
-                        item.title.toLowerCase().search(inputSearch.toLowerCase().trim()) !==
-                        -1
-                );
+                result = result.filter((item) => item.name.toLowerCase().search(inputSearch.toLowerCase().trim()) !== -1);
             }
 
             setList(result);
@@ -56,6 +52,10 @@ const Productos = () => {
         <AnimatedPage>
             <div className='container w-[75%] flex flex-col m-auto my-6'>
                 <h2 className='font-semibold text-2xl text-center'>Todos los productos</h2>
+                <Search
+                    value={inputSearch}
+                    changeInput={(e) => setInputSearch(e.target.value)}
+                />
                 <div className="flex flex-col">
                     <Filter
                         selectedCategory={selectedCategory}

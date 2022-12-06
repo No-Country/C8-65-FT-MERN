@@ -8,7 +8,9 @@ const List = ({ list }) => {
   return (
     <div className='l-cards'>
       {list.map((product) => (
-        <Card product={product} />
+        <div key={product.slug}>
+          <Card product={product} />
+        </div>
       ))}
     </div>
   )

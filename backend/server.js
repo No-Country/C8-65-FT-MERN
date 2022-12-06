@@ -30,6 +30,9 @@ app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/message", messageRouter);
 app.use("/api/orders", orderRouter);
+app.get('/api/category', (req, res) => {
+  res.send(data.category);
+})
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });

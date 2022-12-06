@@ -14,21 +14,14 @@ const NavBar = () => {
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { cart, userInfo } = state;
 
-    const signoutHandler = () => {
-        ctxDispatch({ type: 'USER_SIGNOUT' });
-        localStorage.removeItem('userInfo');
-        localStorage.removeItem('shippingAddress');
-    }
 
 
-    const [open, setOpen] = useState(true)
 
-    const [active, setActive] = useState(false)
 
-    const showMenu = () => {
-        setActive(!active)
-    }
-    console.log(userInfo);
+
+
+
+
     return (
         <IconContext.Provider value={{ color: '#2ca289' }}>
             <nav className=' shadow-md w-full top-0 left-0' style={{ 'zIndex': 999 }} >
@@ -37,9 +30,8 @@ const NavBar = () => {
                         <div className='flex flex-row w-auto h-full m-auto'>
                             <img className=' h-10 w-10 m-auto mr-3' src='https://res.cloudinary.com/dbovldjfc/image/upload/v1669327355/farmacia/pills_llhrbs.png' alt="" />
                             <div className='flex flex-col items-center justify-center '>
-                                <h2 className=' text-ms cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
-                                <p className='text-center font-bold text-[#0097a7]'>Medicamentos</p>
-
+                                <h2 className=' md:text-ms text-xs cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
+                                <p className='text-center font-bold text-[#0097a7] md:text-ms text-xs'>Medicamentos</p>
                             </div>
 
                         </div>
