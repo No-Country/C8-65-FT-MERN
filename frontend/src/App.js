@@ -42,7 +42,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Favorite" element={<Favorite />} />
           <Route path="/products" element={<Productos />} />
-
         </Routes>
       </QueryClientProvider>
       <Footer></Footer>

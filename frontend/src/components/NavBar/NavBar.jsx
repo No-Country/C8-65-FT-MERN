@@ -42,16 +42,19 @@ const NavBar = () => {
 
                         <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto'></li>
 
-                        <Link to='/favorite' className='mx-3'><AiOutlineHeart className='h-7 w-7' /></Link>
-
                         <Link to='/products' className='mx-3'><AiOutlineShop className='h-7 w-7' /></Link>
+
+                        <Link to='/favorite' className=' relative flex mx-3'>
+                            <AiOutlineHeart className=' flex-1 fill-current h-7 w-7' />
+                            {state.favorite.length > 0 && <span className='"absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center'>{state.favorite.length}</span>}
+                        </Link>
 
                         <li className='md:ml-8  no-underline md:my-0 my-7'></li>
                         <DropDown />
                         <li className='md:ml-8  no-underline md:my-0 my-7 block align-middle'></li>
                         <Link to='/cart' className='relative flex mx-3 '>
                             <AiOutlineShoppingCart className='flex-1  fill-current h-7 w-7 ' />
-                            <span className='"absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center'>{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</span>
+                            {cart.cartItems.length > 0 && <span className='"absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center'>{cart.cartItems.reduce((a, c) => a + c.quantity, 0)}</span>}
                         </Link>
                         <li className='md:ml-8  no-underline md:my-0 my-7'></li>
                         <Link to='/contact' className='mx-3'><AiOutlinePhone className='h-7 w-7' /></Link>
