@@ -25,18 +25,22 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_FAVORITE":
       const newFavorite = action.payload;
-      console.log(state.favorite);
-      console.log(newFavorite);
       const AlreadyFavorite = state.favorite.some(
         (favItem) => favItem._id === newFavorite._id
       );
-      console.log(AlreadyFavorite);
       const Favorite = AlreadyFavorite
         ? state.favorite
         : [...state.favorite, { ...newFavorite, isFavorite: true }];
-      console.log(Favorite);
       localStorage.setItem("favoriteItem", JSON.stringify(Favorite));
       return { ...state, favorite: Favorite };
+    case "DELETE_TO_FAVORITE":
+      const Data = action.payload;
+      const DeleteAlreadyFav = state.favorite.filter(
+        (fav) => fav._id !== Data._id
+      );
+      localStorage.setItem("favoriteItem", JSON.stringify(DeleteAlreadyFav));
+      return { ...state, favorite: DeleteAlreadyFav };
+
     case "ADD_TO_CART":
       const newItem = action.payload;
       //verificacion del item

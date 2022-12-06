@@ -37,6 +37,11 @@ const ProductDetails = (data) => {
         setQuantity(0)
 
     }
+
+    const HandleFavorite = () => {
+        if (!FavProduct) return dispatch({ type: "ADD_TO_FAVORITE", payload: data })
+        dispatch({ type: "DELETE_TO_FAVORITE", payload: data })
+    }
     useEffect(() => {
         setStock(FindItem ? stock - FindItem.quantity : stock)
         setFav(findFavorite ? findFavorite.isFavorite : false)
@@ -71,7 +76,7 @@ const ProductDetails = (data) => {
                             <button onClick={addCartHandle} className={`bg-celeste ${QuantityBuy === 0 ? "cursor-not-allowed" : ""} hover:bg-celeste_oscuro h-[2.3rem] w-[12rem] text-[1rem] md:text-[1.2rem] lg:w-[10rem] rounded-xl text-white`}>
                                 Add Cart
                             </button>
-                            <button className="" onClick={() => dispatch({ type: "ADD_TO_FAVORITE", payload: data })}>{FavProduct ? <FcLike style={{ color: '#2ca289', fontSize: '2em' }} /> : <AiOutlineHeart style={{ color: '#2ca289', fontSize: '2em' }} />}</button>
+                            <button className="" onClick={HandleFavorite}>{FavProduct ? <FcLike style={{ color: '#2ca289', fontSize: '2em' }} /> : <AiOutlineHeart style={{ color: '#2ca289', fontSize: '2em' }} />}</button>
                         </div>
                         <ul className="flex flex-col">
                             <li className="text-[1.1rem] text-celeste" >Categorias: {category && <span className="font-semibold text-[1rem]">{!Array.isArray(category) ? category : category.join(", ")}</span>}</li>
