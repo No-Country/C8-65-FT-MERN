@@ -29,7 +29,7 @@ const NavBar = () => {
                     <Link to='/' className='flex justify-center items-center'>
                         <div className='flex flex-row w-auto h-full m-auto'>
                             <img className=' h-10 w-10 m-auto mr-3' src='https://res.cloudinary.com/dbovldjfc/image/upload/v1669327355/farmacia/pills_llhrbs.png' alt="" />
-                            <div className='flex flex-col items-center justify-center '>
+                            <div className='flex flex-col items-center justify-center invisible md:visible'>
                                 <h2 className=' md:text-ms text-xs cursor-pointer  text-black text-center font-bold '>Pharmacy</h2>
                                 <p className='text-center font-bold text-[#0097a7] md:text-ms text-xs'>Medicamentos</p>
                             </div>
@@ -43,7 +43,7 @@ const NavBar = () => {
                         <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto'></li>
 
                         <Link to='/products' className='mx-3'><AiOutlineShop className='h-7 w-7' /></Link>
-
+                        <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto'></li>
                         <Link to='/favorite' className=' relative flex mx-3'>
                             <AiOutlineHeart className=' flex-1 fill-current h-7 w-7' />
                             {state.favorite.length > 0 && <span className='"absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center'>{state.favorite.length}</span>}

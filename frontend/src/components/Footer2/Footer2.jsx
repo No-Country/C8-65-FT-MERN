@@ -17,7 +17,7 @@ const Footer2 = () => {
     localStorage.removeItem('shippingAddress');
   }
   return (
-    <footer className='p-4 bg-celeste_oscuro sm:p-6 '>
+    <footer className='p-4 bg-celeste_oscuro sm:p-6 my-6'>
       <div className='md:flex md:justify-between lg:px-16 px-0'>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-6 lg:grid-cols-4 w-full">
           <div>
