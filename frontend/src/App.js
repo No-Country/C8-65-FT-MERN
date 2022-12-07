@@ -1,8 +1,6 @@
 import NavBar from "./components/NavBar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/screens/Home";
-import Cart from "./components/screens/Cart";
-import ProductScreen from "./components/detalles/Detalles";
 import Example from "./components/screens/CartPrueba";
 import Product from "./components/screens/Product";
 import SigIn from "./components/screens/Signin";
@@ -18,6 +16,10 @@ import Contact from "./components/screens/Contact";
 import Favorite from "./components/screens/Favorite";
 import Productos from "./components/screens/AllProducts";
 import Footer from "./components/Footer/Footer";
+
+import Footer2 from "./components/Footer2/Footer2";
+
+
 
 const queryClient = new QueryClient();
 function App() {
@@ -42,9 +44,11 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/Favorite" element={<Favorite />} />
           <Route path="/products" element={<Productos />} />
+
         </Routes>
       </QueryClientProvider>
       <Footer></Footer>
+      <Footer2 />
     </div>
   );
 }
