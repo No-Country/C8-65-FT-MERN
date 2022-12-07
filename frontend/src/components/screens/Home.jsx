@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Homee from "../Homee/Homee";
 import AnimatedPage from "../AnimatedPage/AnimatedPage";
+import Footer from '../Footer/Footer'
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -86,6 +87,7 @@ const Home = () => {
                         </div>
                     }
                 </Swiper>
+                <Footer />
             </AnimatedPage>
         </>
     );

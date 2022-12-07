@@ -15,7 +15,7 @@ import ProfileScreen from "./components/screens/ProfileScreen";
 import Contact from "./components/screens/Contact";
 import Favorite from "./components/screens/Favorite";
 import Productos from "./components/screens/AllProducts";
-import Footer from "./components/Footer/Footer";
+
 
 import Footer2 from "./components/Footer2/Footer2";
 
@@ -47,7 +47,6 @@ function App() {
 
         </Routes>
       </QueryClientProvider>
-      <Footer></Footer>
       <Footer2 />
     </div>
   );
