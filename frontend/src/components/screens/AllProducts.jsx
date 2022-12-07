@@ -3,7 +3,7 @@ import React, { useEffect, useReducer } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Filter from '../Filter/Filter';
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import AnimatedPage from '../AnimatedPage/AnimatedPage';
 import Search from '../Search';

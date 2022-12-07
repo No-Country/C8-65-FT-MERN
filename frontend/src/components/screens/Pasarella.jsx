@@ -137,6 +137,7 @@ const Pasarella = () => {
                                 value={numero}
                                 onChange={(e) => setNumero(e.target.value)}
                                 type='text'
+                                required
                                 className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
                             />
 

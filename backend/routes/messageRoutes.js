@@ -20,14 +20,15 @@ messageRouter.post("/send", async (req, res) => {
     email: body.email,
     message: body.message,
   });
-
   try {
     const newMessage = await message.save();
     res.status(200).send({ status: "OK", data: newMessage });
   } catch (error) {
     res.status(400).send({
       status: "FAILED",
-      data: { error: "There are empty fields. Please, fill them" },
+      data: {
+        error: "Ha ocurrido un error con el servidor, intente más tarde",
+      },
     });
   }
 });
