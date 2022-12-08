@@ -73,12 +73,12 @@ const Orden = () => {
 
                             <div className='"w-full bg-white md:px-10 md:py-10'>
                                 <div className="flex md:justify-between justify-center md:pb-2 md:ml-10">
-                                    <h3 className="font-semibold md:text-2xl">Resumen de orden</h3>
+                                    <h3 className="font-semibold md:text-2xl font-Montserrat">Resumen de orden</h3>
                                 </div>
                                 <div className='mb-3'>
                                     <div>
                                         <h3>Datos</h3>
-                                        <div>
+                                        <div className='font-poppins'>
                                             <strong>Nombre: </strong> {cart.shippingAddress.fullName} <br />
                                             <strong>Direccion: </strong> {cart.shippingAddress.address},
                                             {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}
@@ -87,7 +87,7 @@ const Orden = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='mb-3'>
+                                <div className='mb-3 font-poppins'>
                                     <div>
                                         <strong>Metodo de pago: </strong>{cart.paymentMethod}
                                     </div>

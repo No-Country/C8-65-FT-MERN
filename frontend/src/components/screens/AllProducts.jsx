@@ -57,7 +57,7 @@ const Productos = () => {
     return (
         <AnimatedPage>
             <motion.div className='container w-[75%] flex flex-col m-auto my-6' variants={variants}>
-                <h2 className='font-semibold text-2xl text-center'>Todos los productos</h2>
+                <h2 className='font-semibold text-2xl text-center font-Montserrat'>Todos los productos</h2>
                 <Search
                     value={inputSearch}
                     changeInput={(e) => setInputSearch(e.target.value)}
@@ -69,7 +69,7 @@ const Productos = () => {
                     />
                     <div className='w-auto flex items-center justify-center'>
                         <ToggleButtonGroup className='bg-[#B3E8E5] ' exclusive>
-                            <ToggleButton onClick={filtrarTodos} value="left" className='' >Ver todos</ToggleButton>
+                            <ToggleButton onClick={filtrarTodos} value="left" style={{ fontFamily: 'Montserrat' }} >Ver todos</ToggleButton>
                         </ToggleButtonGroup>
                     </div>
                 </div>

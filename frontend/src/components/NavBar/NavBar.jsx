@@ -15,18 +15,10 @@ const NavBar = ({toggleDarkMode}) => {
     const { state } = useContext(Store);
     const { cart } = state;
 
-
-
-
-
-
-
-
-
     return (
         <IconContext.Provider value={{ color: '#2ca289' }}>
             <nav className=' shadow-md w-full top-0 left-0 max-w-auto' style={{ 'zIndex': 999 }} >
-                <div className='flex md:justify-between justify-around  bg-white py-2 md:px-10 px-7 '>
+                <div className='flex md:justify-between justify-around font-poppins bg-white py-2 md:px-10 px-7 '>
                     <Link to='/' className='flex justify-center items-center sm:flex hidden'>
                         <div className=' flex-row w-auto h-full m-auto md:flex hidden'>
                             <img className=' h-10 w-10 m-auto mr-3 ' src='https://res.cloudinary.com/dbovldjfc/image/upload/v1669327355/farmacia/pills_llhrbs.png' alt="" />

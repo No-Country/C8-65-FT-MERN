@@ -57,7 +57,7 @@ const Home = () => {
 
             <AnimatedPage >
                 <Homee />
-                <h3 className="font-semibold text-2xl ml-[6em] my-[60px]">Productos del dia</h3>
+                <h3 className="font-semibold text-2xl ml-[6em] my-[60px] font-Montserrat">Productos del dia</h3>
                 <div className="border-[1px] w-[90%] m-auto "></div>
                 <Swiper
                     slidesPerView={1}
