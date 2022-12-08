@@ -10,6 +10,9 @@ module.exports = {
         celeste: '#24BAA0',
         //celeste_claro: '#B3E8E5',
       },
+      fontFamily: {
+        'poppins': ['Poppins'],
+     }
     },
   },
   plugins: [],
