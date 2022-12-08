@@ -30,8 +30,8 @@ const ProductDetails = (data) => {
     const addCartHandle = () => {
         if (QuantityBuy === 0) return
         if (QuantityBuy > StockProduct) {
-          alert("Esta añadiendo más productos de los q hay en stock");
-          return;
+            alert("Esta añadiendo más productos de los q hay en stock");
+            return;
         }
         dispatch({ type: 'ADD_TO_CART', payload: { ...data, quantity: FindItem?.quantity + QuantityBuy || QuantityBuy } })
         setQuantity(0)
@@ -48,7 +48,7 @@ const ProductDetails = (data) => {
     }, [addCartHandle, findFavorite])
 
     return (
-        <article className="w-[100%] md:p-10">
+        <article className="w-[100%]md:p-10 mt-10 order">
             <div className="w-full flex justify-between flex-col items-center gap-2 mb-6  md:flex-row md:items-start">
                 <img
                     src={image}

@@ -51,8 +51,8 @@ const reducer = (state, action) => {
       //funcion para no repetir un item ya agregado
       const cartItems = existItem
         ? state.cart.cartItems.map((item) =>
-            item._id === existItem._id ? newItem : item
-          )
+          item._id === existItem._id ? newItem : item
+        )
         : [...state.cart.cartItems, newItem];
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
@@ -91,6 +91,7 @@ const reducer = (state, action) => {
         ...state,
         cart: { ...state.cart, paymentMethod: action.payload },
       };
+
     default:
       return state;
   }

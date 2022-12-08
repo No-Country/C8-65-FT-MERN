@@ -57,7 +57,7 @@ const ProfileScreen = () => {
     };
     return (
         <AnimatedPage>
-            <div className=" w-[80%] md:w-[30%] flex mx-auto flex-col  items-center">
+            <div className=" w-[80%] md:w-[30%] flex mx-auto flex-col  items-center order">
                 <h1 className="my-3">Mi Perfil</h1>
                 <form onSubmit={submitHandler} className='ml-0 w-full flex flex-col'>
                     <div className="flex flex-col" >

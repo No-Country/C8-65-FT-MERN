@@ -28,7 +28,7 @@ const OrderScreen = () => {
     const { id: orderId } = params
     const navigate = useNavigate();
 
-    const [{ loading, error, order, successPay, loadingPay }, dispatch] = useReducer(reducer, {
+    const [{ order }, dispatch] = useReducer(reducer, {
         loading: true,
         order: {},
         error: '',
@@ -57,7 +57,7 @@ const OrderScreen = () => {
 
     return (
         <AnimatedPage>
-            <div className='lg:container  lg:mx-auto lg:mt-10 my-7 px-5 '>
+            <div className='lg:container  lg:mx-auto lg:mt-10 my-7 px-5 order'>
 
                 <div className='flex md:my-10 md:flex-row flex-col'>
 

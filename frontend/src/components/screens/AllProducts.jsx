@@ -1,18 +1,24 @@
 import axios from 'axios';
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import Filter from '../Filter/Filter';
 // import { styled } from "@mui/material/styles";
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import AnimatedPage from '../AnimatedPage/AnimatedPage';
 import Search from '../Search';
 import List from '../List/List'
+import { motion } from "framer-motion"
 const Productos = () => {
 
 
 
-
+    const variants = {
+        whileInViewText: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+        whileInViewText2: { y: 0, opacity: 1, transition: { duration: 0.9 } },
+        whileInViewText3: { y: 0, opacity: 1, transition: { duration: 1.2 } },
+        initialText2: { y: 100, opacity: 0 }
+    };
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [list, setList] = useState([]);
     const [inputSearch, setInputSearch] = useState("");
@@ -50,7 +56,7 @@ const Productos = () => {
     }, [selectedCategory, inputSearch]);
     return (
         <AnimatedPage>
-            <div className='container w-[75%] flex flex-col m-auto my-6'>
+            <motion.div className='container w-[75%] flex flex-col m-auto my-6' variants={variants}>
                 <h2 className='font-semibold text-2xl text-center'>Todos los productos</h2>
                 <Search
                     value={inputSearch}
@@ -70,7 +76,7 @@ const Productos = () => {
                 <div className="h-col">
                     <List list={list} />
                 </div>
-            </div>
+            </motion.div>
         </AnimatedPage>
     )
 }

@@ -48,7 +48,7 @@ const data = {
     },
     {
       name: "Aspirina",
-      precio: 4.41,
+      precio: 4,
       slug: "aspirina-248",
       category: "dolor_de_cabeza",
       image:

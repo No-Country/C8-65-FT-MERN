@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../../Store";
 import axios from 'axios';
@@ -35,30 +35,30 @@ function Example() {
             <AnimatedPage>
                 {cartItems.length === 0 ?
                     (
-                        <div className="flex  w-full h-screen m-auto flex-col">
+                        <div className="flex  w-full h-screen m-auto flex-col order">
                             <img src='./img/carroVacio.svg' alt="" className="w-60 h-60 mx-auto " />
                             <h3 className="font-semibold mx-auto my-1 text-2xl">Todavia no hay productos en el carro</h3>
                             <Link to='/' className="mx-auto">Regresar a la tienda</Link>
                         </div>
                     )
                     : (
-                        <div className="lg:container  lg:mx-auto lg:mt-10 my-7 px-5 ">
+                        <div className="lg:container  lg:mx-auto lg:mt-10 my-7 px-5 order">
                             <div className="flex md:my-10 md:flex-row flex-col">
                                 <div className="w-full bg-white md:px-10 md:py-10">
                                     <div className="flex md:justify-between justify-center md:pb-2 md:ml-10">
                                         <h1 className="font-semibold md:text-2xl">Carro</h1>
                                     </div>
                                     {cartItems.map((item) => (
-                                        <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 " key={item._id}>
+                                        <div className="flex items-center md:mx-8 md:my-8 md:px-4 md:py-4 rounded-2xl border-gray-300 md:border-2 mt-10 " key={item._id}>
                                             <div className="flex w-2/5">
                                                 <div className="w-20">
-                                                    <img className="md:h-28 md:w-28 h-20 w-20" src={item.image} alt="" />
+                                                    <img className="invisible lg:visible md:h-28 md:w-28 h-20 w-20" src={item.image} alt="" />
                                                 </div>
                                                 <div className="flex flex-col justify-between ml-4 flex-grow">
                                                     <span className="font-bold text-sm">{item.name}</span>
                                                     <span className="text-red-500 text-xs">Id del producto: {item._id}</span>
                                                     <button className='text-left' onClick={() => removeItemCart(item)}>
-                                                        <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs text-left">Eliminar</a>
+                                                        <span className="font-semibold hover:text-red-500 text-gray-500 text-xs text-left">Eliminar</span>
                                                     </button>
                                                 </div>
                                             </div>

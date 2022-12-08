@@ -52,7 +52,7 @@ function Card(props) {
   };
   return (
     <IconContext.Provider value={{ color: "#9E9E9E" }}>
-      <motion.div
+      <div
         variants={variants}
         initial="initialText2"
         whileInView="whileInViewText"
@@ -72,7 +72,7 @@ function Card(props) {
           />
         )}
         <img
-          className=" w-[200px] h-[200px] mt-2 self-center"
+          className=" w-[200px] h-[200px] mt-2 self-center object-contain"
           src={product.image}
           alt=""
 
@@ -94,11 +94,11 @@ function Card(props) {
           <div className="">
             {product.day ? (
               <div>
-                <p className="mt-2 ml-3">$ {product.precio * 0.30}</p>
+                <p className="mt-2 ml-0 sm:ml-3">$ {product.precio * 0.30}</p>
                 <p className="ml-3 text-gray-500 line-through">{product.precio}</p>
               </div>
             ) : (
-              <p className="mt-2 ml-3">$ {product.precio}</p>
+              <p className="mt-2 ml-0 sm:ml-3">$ {product.precio}</p>
             )}
           </div>
 
@@ -115,7 +115,7 @@ function Card(props) {
             />
           </div>
         </div>
-      </motion.div>
+      </div>
     </IconContext.Provider>
   );
 }

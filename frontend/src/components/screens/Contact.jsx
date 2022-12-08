@@ -8,7 +8,7 @@ const Contact = () => {
 
     return (
         <AnimatedPage>
-            <section className="flex justify-center items-center">
+            <section className="flex justify-center items-center order">
                 <div className="w-[90%] md:w-[30rem] flex mx-auto flex-col  items-center">
                     <h3 className='text-left w-full ml-2 my-8 text-xl'>Dejanos un mensaje</h3>
                     <Formik
