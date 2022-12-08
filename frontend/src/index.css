@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap');
 
 .favorite, .order {
-    height: calc(100vh - 92px);
+    min-height: calc(100vh - 92px);
 
 }
 @font-face {
