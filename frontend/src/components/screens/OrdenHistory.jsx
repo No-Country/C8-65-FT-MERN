@@ -47,6 +47,9 @@ export default function OrderHistoryScreen() {
             }
         };
         fetchData();
+        if (!userInfo) {
+            navigate('/')
+        }
     }, [userInfo]);
     return (
         <>
@@ -59,7 +62,7 @@ export default function OrderHistoryScreen() {
 
                     <div className='   sm:rounded-lg order '>
 
-                        <h1 className='text-center m-7 font-semibold'>Historial de ordenes</h1>
+                        <h1 className='text-center m-7 font-semibold font-Montserrat'>Historial de ordenes</h1>
                         {loading ? (
                             <Loading />
                         ) : error ? (
@@ -69,7 +72,7 @@ export default function OrderHistoryScreen() {
                                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                                     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                         <div class="overflow-hidden">
-                                            <table class="min-w-full">
+                                            <table class="min-w-full font-poppins">
                                                 <thead class="text-xs text-gray-700 uppercase bg-[#3aa18b] dark:bg-[#3aa18b] dark:text-black">
                                                     <tr>
                                                         <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
