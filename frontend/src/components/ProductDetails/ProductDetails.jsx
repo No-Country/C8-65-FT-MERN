@@ -87,10 +87,10 @@ const ProductDetails = (data) => {
                 </div>
             </div>
             <div className="pl-[3rem] w-[80%] lg:w-[50%]">
-                <h3 className="border-solid border-celeste border-b-4 inline">
+                <h3 className="border-solid border-celeste border-b-4 inline font-Montserrat">
                     Descripción
                 </h3>
-                <p>{description}</p>
+                <p className='font-poppins'>{description}</p>
             </div>
         </article>
     )

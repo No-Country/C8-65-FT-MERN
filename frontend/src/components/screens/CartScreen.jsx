@@ -37,8 +37,8 @@ function Example() {
                     (
                         <div className="flex  w-full h-screen m-auto flex-col order">
                             <img src='./img/carroVacio.svg' alt="" className="w-60 h-60 mx-auto " />
-                            <h3 className="font-semibold mx-auto my-1 text-2xl">Todavia no hay productos en el carro</h3>
-                            <Link to='/' className="mx-auto">Regresar a la tienda</Link>
+                            <h3 className="font-semibold mx-auto my-1 text-2xl font-Montserrat">Todavia no hay productos en el carro</h3>
+                            <Link to='/' className="mx-auto font-poppins">Regresar a la tienda</Link>
                         </div>
                     )
                     : (
@@ -112,7 +112,7 @@ function Example() {
                                     </div>
                                     <div className="border-t mt-8">
                                         <div className="flex font-semibold justify-between py-6 text-sm uppercase">
-                                            <span>Total cost</span>
+                                            <span>Total</span>
                                             <span>{cartItems.reduce((a, c) => a + c.precio * c.quantity, 0)}$</span>
                                         </div>
                                         <button className="border rounded-2xl bg-[#00ACC1] font-semibold hover:bg-[#0097A7] py-3 text-sm text-white uppercase w-full" onClick={checkoutHandler}>Checkout</button>
