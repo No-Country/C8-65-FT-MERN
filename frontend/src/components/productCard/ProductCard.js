@@ -84,21 +84,21 @@ function Card(props) {
         </Link>
         {/* <p className="flex mt-4 ml-2 text-gr" >{product.description}</p> */}
 
-        <div className="flex row-auto mt-2 gap-2">
+        {/* <div className="flex row-auto mt-2 gap-2">
           {[...new Array(5)].map((item, index) => (
             <AiOutlineStar key={index} className="w-5 h-5 " />
           ))}
-        </div>
+        </div> */}
 
         <div className="flex row-auto mt-2 space-x-14">
           <div className="">
             {product.day ? (
               <div>
-                <p className="mt-2 ml-0 sm:ml-3">$ {product.precio * 0.30}</p>
+                <p className="mt-2 ml-0 sm:ml-3">${product.precio * 0.30}</p>
                 <p className="ml-3 text-gray-500 line-through">{product.precio}</p>
               </div>
             ) : (
-              <p className="mt-2 ml-0 sm:ml-3">$ {product.precio}</p>
+              <p className="mt-2 ml-0 sm:ml-3">${product.precio}</p>
             )}
           </div>
 

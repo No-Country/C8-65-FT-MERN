@@ -69,7 +69,7 @@ const Productos = () => {
                     />
                     <div className='w-auto flex items-center justify-center'>
                         <ToggleButtonGroup className='bg-[#B3E8E5] ' exclusive>
-                            <ToggleButton onClick={filtrarTodos} value="left" className='' >Ver todos</ToggleButton>
+                            <ToggleButton onClick={filtrarTodos} value="left" style={{ fontFamily: 'Montserrat' }} >Ver todos</ToggleButton>
                         </ToggleButtonGroup>
                     </div>
                 </div>
