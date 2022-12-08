@@ -7,7 +7,7 @@ function Homee() {
   return (
     <IconContext.Provider value={{ color: '#24BAA0' }}>
 
-      <div className=" grid grid-cols-1 mt-5 w-full h-auto font-poppins bg-white ">
+      <div className=" grid grid-cols-1 mt-10 mb-28 w-full h-auto font-poppins bg-white ">
         <div className="flex flex-col lg:flex-row my-5 mb-[100px] gap-y-8">
           <div className=" w-full lg:w-2/5 flex flex-col place-items-center place-content-center lg:my-0 my-10">
             <div className="ml-10 flex flex-col lg:items-start items-center  ">
@@ -33,7 +33,7 @@ function Homee() {
         <div className="w-full  lg:h-28 h-auto mt-10 flex lg:items-center lg:justify-center space-y-6 lg:flex-row
         flex-col lg:my-0 my-5 items-center justify-center ">
 
-          <div className=" flex row w-[300px] ">
+          <div className=" flex row w-[300px] mt-7 ">
             <MdOutlineSavings className="w-[40px] h-[40px] mr-6"></MdOutlineSavings>
             <div className="flex flex-col">
               <h3 className="text-lg  font-[30px] lg:font-medium" >Donaciones</h3>
@@ -41,7 +41,7 @@ function Homee() {
             </div>
           </div>
 
-          <div className=" flex row w-[300px] ">
+          <div className=" flex row w-[300px]  ">
             <MdOutlineVerifiedUser className="w-[40px] h-[40px] mr-6"></MdOutlineVerifiedUser>
             <div className="flex flex-col">
               <h3 className="text-lg  font-[30px] lg:font-medium" >Verificar</h3>

@@ -17,7 +17,7 @@ export const DropDown = () => {
     }
 
     return (
-        <div className=" flex justify-end " style={{ zindex: '999' }}>
+        <div className=" flex justify-end font-poppins " style={{ zindex: '999' }}>
             <Menu as="div" className="relative">
                 <Menu.Button className="inline-flex justify-center w-full  px-4 py-2 bg-white  text-sm font-medium text-gray-700   ">
                     <BsPerson className="h-7 w-7" />
