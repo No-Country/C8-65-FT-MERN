@@ -17,12 +17,12 @@ const Footer2 = () => {
     localStorage.removeItem('shippingAddress');
   }
   return (
-    <footer className='p-4 bg-celeste_oscuro sm:p-6 mt-6 fixed-botton'>
+    <footer className='p-4 w-full bg-celeste_oscuro sm:p-6 mt-6 fixed-botton font-poppins'>
       <div className='md:flex md:justify-between lg:px-16 px-0'>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-6 lg:grid-cols-4 w-full">
           <div>
             <Link to='/products'>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Productos</h2>
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase ">Productos</h2>
             </Link>
             <ul className="text-white">
               <li >
@@ -37,7 +37,7 @@ const Footer2 = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Perfil</h2>
+            <h2 className="mb-6 text-sm font-semibold uppercase text-white">Perfil</h2>
             {userInfo ? (<ul className="text-white">
               <li >
                 <Link to='/orderhistory'><span>Historial de ordenes</span></Link>

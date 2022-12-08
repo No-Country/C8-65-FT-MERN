@@ -10,7 +10,7 @@ const FavoriteCard = ({ data }) => {
     const [FavProduct, setFav] = useState(isFavorite || false)
     const navigate = useNavigate();
     return (
-        <div className='flex justify-between items-center bg-white border-solid border-2 border-gray-300 min-w-[20rem] min-h-[6rem] gap-2 px-2 rounded-lg '>
+        <div className='flex justify-between items-center font-poppins bg-white border-solid border-2 border-gray-300 min-w-[20rem] min-h-[6rem] gap-2 px-2 rounded-lg '>
             <img src={image} alt={name} className='w-[4rem] h-[4rem] object-cover' />
             <div className='flex flex-col items-center'>
                 <h2 className='text-black text-[1.2rem]'>{name}</h2>

@@ -7,13 +7,13 @@ function Homee() {
   return (
     <IconContext.Provider value={{ color: '#24BAA0' }}>
 
-      <div className=" grid grid-cols-1 mt-5 h-auto">
+      <div className=" grid grid-cols-1 mt-5 h-auto font-poppins">
         <div className="flex flex-col lg:flex-row my-5 mb-[100px] gap-y-8">
           <div className=" w-full lg:w-2/5 flex flex-col place-items-center place-content-center lg:my-0 my-10">
             <div className="ml-10 flex flex-col lg:items-start items-center  ">
 
               <div className="flex flex-col text-start lg:items-start lg:justify-start items-center justify-center ">
-                <h1 className="text-2xl font-poppins mb-4">Phamarcy Medicamentos</h1>
+                <h1 className="text-2xl font-Montserrat mb-4">Phamarcy Medicamentos</h1>
                 <p className="flex text-start w-[70%]">
                   Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
                 </p>
@@ -36,7 +36,7 @@ function Homee() {
           <div className=" flex row w-[300px] ">
             <MdOutlineSavings className="w-[40px] h-[40px] mr-6"></MdOutlineSavings>
             <div className="flex flex-col">
-              <h3 className="text-lg  font-[30px] lg:font-medium" >Donaciones</h3>
+              <h3 className="text-lg font-[30px] lg:font-Montserrat" >Donaciones</h3>
               <p>Donaciones a los necesitados.</p>
             </div>
           </div>
@@ -44,7 +44,7 @@ function Homee() {
           <div className=" flex row w-[300px] ">
             <MdOutlineVerifiedUser className="w-[40px] h-[40px] mr-6"></MdOutlineVerifiedUser>
             <div className="flex flex-col">
-              <h3 className="text-lg  font-[30px] lg:font-medium" >Verificar</h3>
+              <h3 className="text-lg  font-[30px] lg:font-Montserrat" >Verificar</h3>
               <p>Verificate iniciando seccion. </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ function Homee() {
           <div className=" flex row w-[300px] ">
             <MdOutlineComputer className="w-[40px] h-[40px] mr-6"></MdOutlineComputer>
             <div className="flex flex-col">
-              <h3 className="text-lg  font-[30px] lg:font-medium ">Online</h3>
+              <h3 className="text-lg  font-[30px] lg:font-Montserrat ">Online</h3>
               <p>Podes realizar pedidos via online.</p>
             </div>
           </div>
@@ -60,7 +60,7 @@ function Homee() {
           <div className=" flex row w-[300px] ">
             <MdOutlineDirectionsBusFilled className="w-[40px] h-[40px] mr-6"></MdOutlineDirectionsBusFilled>
             <div className="flex flex-col">
-              <h3 className="text-lg  font-[30px] lg:font-medium">Delivery</h3>
+              <h3 className="text-lg  font-[30px] lg:font-Montserrat">Delivery</h3>
               <p>contamos con hacer envio hasta su casa.</p>
             </div>
           </div>
