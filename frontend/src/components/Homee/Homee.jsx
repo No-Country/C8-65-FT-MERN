@@ -13,7 +13,7 @@ function Homee() {
             <div className="ml-10 flex flex-col lg:items-start items-center  ">
 
               <div className="flex flex-col text-start lg:items-start lg:justify-start items-center justify-center ">
-                <h1 className="text-2xl font-medium mb-4">Phamarcy Medicamentos</h1>
+                <h1 className="text-2xl font-poppins mb-4">Phamarcy Medicamentos</h1>
                 <p className="flex text-start w-[70%]">
                   Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
                 </p>
