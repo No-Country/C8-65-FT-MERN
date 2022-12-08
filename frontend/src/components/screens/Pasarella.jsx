@@ -66,7 +66,7 @@ const Pasarella = () => {
         <AnimatedPage>
             <div>
                 <Checkout step1 step2></Checkout>
-                <div className='w-[40%] flex mx-auto flex-col  items-center'>
+                <div className='w-[70%] md:w-[40%] flex mx-auto flex-col  items-center'>
                     <h3 className='text-left w-full ml-2 my-8 text-xl'>Checkout</h3>
                     <form onSubmit={submitHandler} className='ml-0 w-full flex flex-col  '>
                         <div className='flex flex-col' >
