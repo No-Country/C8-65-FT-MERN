@@ -1,0 +1,19 @@
+.f-container {
+    padding: 40px 10px;
+    width: auto;
+}
+
+.f-category {
+    margin-bottom: 15px;
+    letter-spacing: 1.3px;
+    color: red;
+    background-color: red;
+}
+
+.filter-group {
+    margin-bottom: 50px;
+   
+    width: auto;
+    display: flex;
+    justify-content:center ;
+}

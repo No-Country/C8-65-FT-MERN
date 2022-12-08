@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 @layer components {
-  .quantity-btn {
-    @apply text-celeste rounded-lg text-4xl md:text-5xl select-none;
-  }
+    .quantity-btn {
+        @apply text-celeste rounded-lg text-4xl
+    }
 }
+
+/*.swiper-slide-duplicate{
+    height:90vh;
+    margin-top:0;
+}*/

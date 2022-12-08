@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Menu } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { BsPerson } from 'react-icons/bs'
@@ -6,10 +6,9 @@ import { Store } from "../../Store";
 import { Link } from "react-router-dom";
 
 export const DropDown = () => {
-    const [isOpen, setIsOpen] = useState(false);
 
     const { state, dispatch: ctxDispatch } = useContext(Store);
-    const { cart, userInfo } = state;
+    const { userInfo } = state;
 
     const signoutHandler = () => {
         ctxDispatch({ type: 'USER_SIGNOUT' });
@@ -17,11 +16,10 @@ export const DropDown = () => {
         localStorage.removeItem('shippingAddress');
     }
 
-    console.log(userInfo);
     return (
-        <div className="  flex justify-end p-4">
+        <div className=" flex justify-end " style={{ zindex: '999' }}>
             <Menu as="div" className="relative">
-                <Menu.Button className="inline-flex justify-center w-full  px-4 py-2 bg-white text-sm font-medium text-gray-700  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                <Menu.Button className="inline-flex justify-center w-full  px-4 py-2 bg-white  text-sm font-medium text-gray-700   ">
                     <BsPerson className="h-7 w-7" />
                     <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                 </Menu.Button>

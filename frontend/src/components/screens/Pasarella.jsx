@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Store } from '../../Store';
+import AnimatedPage from '../AnimatedPage/AnimatedPage';
 
 import Checkout from '../Checkout';
 
@@ -61,96 +62,98 @@ const Pasarella = () => {
         navigate('/payment')
     };
 
-    console.log(shippingAddress);
     return (
-        <div>
-            <Checkout step1 step2></Checkout>
-            <div className='w-[40%] flex mx-auto flex-col  items-center'>
-                <h3 className='text-left w-full ml-2 my-8 text-xl'>Checkout</h3>
-                <form onSubmit={submitHandler} className='ml-0 w-full flex flex-col  '>
-                    <div className='flex flex-col' controlId='fullname'>
-                        <label>Full Name</label>
-                        <input
-                            value={fullName}
-                            onChange={(e) => setFullName(e.target.value)}
-                            required
-                            type='text'
-                            className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
-                        />
-                    </div>
-                    <div className='flex flex-col' controlId='address'>
-                        <label>Address</label>
-                        <input
-                            value={address}
-                            onChange={(e) => setAddress(e.target.value)}
-                            required
-                            type='text'
-                            className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
-                        />
-                    </div>
-                    <div className="flex flex-col" controlId="city">
-                        <label>City</label>
-                        <input
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                            required
-                            type='text'
-                            className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
-                        />
-                    </div>
-                    <div className="flex flex-col" controlId="postalCode">
-                        <label>Postal Code</label>
-                        <input
-                            value={postalCode}
-                            onChange={(e) => setPostalCode(e.target.value)}
-                            required
-                            type='number'
-                            className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
-                        />
-                    </div>
-                    <div className="flex flex-col" controlId="country">
-                        <label>Country</label>
-                        <input
-                            value={country}
-                            onChange={(e) => setCountry(e.target.value)}
-                            required
-                            type='text'
-                            className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
-                        />
+        <AnimatedPage>
+            <div>
+                <Checkout step1 step2></Checkout>
+                <div className='w-[70%] md:w-[40%] flex mx-auto flex-col  items-center'>
+                    <h3 className='text-left w-full ml-2 my-8 text-xl'>Checkout</h3>
+                    <form onSubmit={submitHandler} className='ml-0 w-full flex flex-col  '>
+                        <div className='flex flex-col' >
+                            <label>Full Name</label>
+                            <input
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                required
+                                type='text'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
+                            />
+                        </div>
+                        <div className='flex flex-col' >
+                            <label>Address</label>
+                            <input
+                                value={address}
+                                onChange={(e) => setAddress(e.target.value)}
+                                required
+                                type='text'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
+                            />
+                        </div>
+                        <div className="flex flex-col" >
+                            <label>City</label>
+                            <input
+                                value={city}
+                                onChange={(e) => setCity(e.target.value)}
+                                required
+                                type='text'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
+                            />
+                        </div>
+                        <div className="flex flex-col" >
+                            <label>Postal Code</label>
+                            <input
+                                value={postalCode}
+                                onChange={(e) => setPostalCode(e.target.value)}
+                                required
+                                type='number'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
+                            />
+                        </div>
+                        <div className="flex flex-col" >
+                            <label>Country</label>
+                            <input
+                                value={country}
+                                onChange={(e) => setCountry(e.target.value)}
+                                required
+                                type='text'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
+                            />
 
-                    </div>
-                    <div className="flex flex-col" controlId="country">
-                        <label>Email</label>
-                        <input
-                            value={email}
-                            onChange={(e) => setemail(e.target.value)}
-                            required
-                            type='text'
-                            className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
-                        />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>Email</label>
+                            <input
+                                value={email}
+                                onChange={(e) => setemail(e.target.value)}
+                                required
+                                type='text'
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
+                            />
 
-                    </div>
-                    <div className="flex flex-col" controlId="country">
-                        <label>Numero de celular</label>
-                        <input
-                            value={numero}
-                            onChange={(e) => setNumero(e.target.value)}
-                            type='text'
-                            className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3'
-                        />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>Numero de celular</label>
+                            <input
+                                value={numero}
+                                onChange={(e) => setNumero(e.target.value)}
+                                type='text'
+                                required
+                                className='my-3 rounded-2xl border-2 border-gray-200 p-1 px-3 text-sm md:text-base'
+                            />
 
-                    </div>
-                    <div className="mb-3 my-3 text-center">
-                        <button
-                            className='bg-[#00bcd4] p-4 rounded-2xl w-[50%] text-white hover:bg-[#0097a7] trasition-all duration-300 ease-in'
-                        >
-                            Continue
-                        </button>
-                    </div>
-                </form>
+                        </div>
+                        <div className="mb-3 my-3 text-center">
+                            <button
+                                className='bg-[#00bcd4] p-4 rounded-2xl w-[50%] text-white hover:bg-[#0097a7] trasition-all duration-300 ease-in md:text-lg text-sm'
+                            >
+                                Continue
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
-
-        </div>
+        </AnimatedPage>
     )
 }
 
