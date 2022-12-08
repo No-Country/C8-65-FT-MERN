@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&display=swap');
 
 .favorite, .order {
-    height: calc(100vh - 92px);
+    min-height: calc(100vh - 92px);
 
 }
 
