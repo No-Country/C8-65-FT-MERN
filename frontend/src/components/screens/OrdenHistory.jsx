@@ -50,14 +50,14 @@ export default function OrderHistoryScreen() {
     }, [userInfo]);
     return (
         <>
-            <AnimatedPage >
+            <AnimatedPage className='w-auto' >
                 {orders?.length === 0 ? (
                     <div className='h-full w-full order'>
                         <h4 className='text-center m-7 font-semibold w-full'>No se ha registrado ninguna orden</h4>
                     </div>
                 ) : (
 
-                    <div className='  shadow-md sm:rounded-lg order'>
+                    <div className='   sm:rounded-lg order '>
 
                         <h1 className='text-center m-7 font-semibold'>Historial de ordenes</h1>
                         {loading ? (
@@ -65,42 +65,69 @@ export default function OrderHistoryScreen() {
                         ) : error ? (
                             <span>Error</span>
                         ) : (
-                            <table className="w-full text-sm text-left  dark:text-gray-400">
-                                <thead className='text-xs text-gray-700 uppercase bg-[#3aa18b] dark:bg-[#3aa18b] dark:text-black'>
-                                    <tr>
-                                        <th scope="col" className="py-3 px-6">ID</th>
-                                        <th scope="col" className="py-3 px-6">DATE</th>
-                                        <th scope="col" className="py-3 px-6">TOTAL</th>
-                                        <th scope="col" className="py-3 px-6">PAID</th>
-                                        <th scope="col" className="py-3 px-6">DELIVERED</th>
-                                        <th scope="col" className="py-3 px-6">ACTIONS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {orders.map((order) => (
-                                        <tr key={order._id} className='bg-white border-b  dark:border-gray-700'>
-                                            <th scope="row" className='py-4 px-6 font-medium  whitespace-nowrap '>{order._id}</th>
-                                            <td className="py-4 px-6">{order.createdAt.substring(0, 10)}</td>
-                                            <td className="py-4 px-6">{order.totalPrice.toFixed(2)}</td>
-                                            <td className="py-4 px-6">{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
-                                            <td className="py-4 px-6">
-                                                {order.isDelivered
-                                                    ? order.deliveredAt.substring(0, 10)
-                                                    : 'No'}
-                                            </td>
-                                            <td className="py-4 px-6">
-                                                <button
-                                                    onClick={() => {
-                                                        navigate(`/order/${order._id}`);
-                                                    }}
-                                                >
-                                                    Details
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                            <div class="flex flex-col">
+                                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                                        <div class="overflow-hidden">
+                                            <table class="min-w-full">
+                                                <thead class="text-xs text-gray-700 uppercase bg-[#3aa18b] dark:bg-[#3aa18b] dark:text-black">
+                                                    <tr>
+                                                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                            ID
+                                                        </th>
+                                                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                            FECHA
+                                                        </th>
+                                                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                            TOTAL
+                                                        </th>
+                                                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                            PAGO
+                                                        </th>
+                                                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                            ENTREGADO
+                                                        </th>
+                                                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                                            ACCIONES
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {orders.map((order) => (
+                                                        <tr class="border-b  dark:border-gray-700">
+                                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{order._id}</td>
+                                                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                {order.createdAt.substring(0, 10)}
+                                                            </td>
+                                                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                {order.totalPrice.toFixed(2)}
+                                                            </td>
+                                                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                {order.isPaid ? order.paidAt.substring(0, 10) : 'No'}
+                                                            </td>
+                                                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                {order.isDelivered
+                                                                    ? order.deliveredAt.substring(0, 10)
+                                                                    : 'No'}
+                                                            </td>
+                                                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                                                <button
+                                                                    onClick={() => {
+                                                                        navigate(`/order/${order._id}`);
+                                                                    }}
+                                                                >
+                                                                    Detalles
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         )}
                     </div>
                 )}
