@@ -41,11 +41,11 @@ function Homee() {
             </div>
           </div>
 
-          <div className=" flex row w-[300px] ">
+          <div className=" flex row w-[300px]">
             <MdOutlineVerifiedUser className="w-[40px] h-[40px] mr-6"></MdOutlineVerifiedUser>
             <div className="flex flex-col">
               <h3 className="text-lg  font-[30px] lg:font-Montserrat" >Verificar</h3>
-              <p>Verificate iniciando seccion. </p>
+              <p>Puedes Verificarte iniciando seccion. </p>
             </div>
           </div>
 
