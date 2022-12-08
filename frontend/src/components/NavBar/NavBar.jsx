@@ -9,7 +9,7 @@ import { Store } from '../../Store'
 
 import { DropDown } from './DropDown'
 
-const NavBar = ({toggleDarkMode}) => {
+const NavBar = ({ toggleDarkMode }) => {
 
 
     const { state } = useContext(Store);
@@ -32,7 +32,7 @@ const NavBar = ({toggleDarkMode}) => {
 
 
                     <ul className='flex items-center md:static bg-white  left-0 w-auto md:w-auto pl-0 sm:pl-9 trasition-all duration-500 ease-in gap-x-3'>
-                        <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto visible md:invisible'><Link to='/products' className='mx-3'><AiOutlineHome className='h-7 w-7' /></Link></li>
+                        <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto visible md:invisible'><Link to='/' className='mx-3'><AiOutlineHome className='h-7 w-7' /></Link></li>
                         <li className='md:ml-8  no-underline md:my-0 my-7 ml-auto'><Link to='/products' className=''><AiOutlineShop className='flex-1 h-7 w-7' /></Link></li>
 
 
