@@ -57,8 +57,8 @@ function Card(props) {
         initial="initialText2"
         whileInView="whileInViewText"
         viewport="viewport"
-        className=" w-auto max-h-[30rem] flex flex-col bg-white border-gray-200
-  p-4 border-2 rounded-2xl shadow-slate-200 shadow-md"
+        className=" w-auto max-h-[30rem] flex flex-col bg-white border-gray-200 
+  p-4 border-2 rounded-2xl shadow-slate-200  shadow-md"
       >
         {favorito ? (
           <FcLike
@@ -102,9 +102,9 @@ function Card(props) {
             )}
           </div>
 
-          <div className="h-11 flex border-2 mt-2 border-celeste rounded-lg hover:border-celeste_oscuro">
+          <div className="h-11 flex border-2 mt-2 border-celeste  rounded-lg hover:border-celeste_oscuro">
             <button
-              className=" w-28 bg-celeste  text-white font-semibold rounded-md hover:bg-celeste_oscuro transition ease-in-out delay-100"
+              className=" w-28 bg-celeste text-white font-semibold rounded-md hover:bg-celeste_oscuro  transition ease-in-out delay-100"
               onClick={() => addToCartHandler(product)}
             >
               Buy

@@ -15,6 +15,7 @@ import ProfileScreen from "./components/screens/ProfileScreen";
 import Contact from "./components/screens/Contact";
 import Favorite from "./components/screens/Favorite";
 import Productos from "./components/screens/AllProducts";
+import { useState } from "react";
 
 
 import Footer2 from "./components/Footer2/Footer2";
@@ -23,13 +24,21 @@ import Footer2 from "./components/Footer2/Footer2";
 
 const queryClient = new QueryClient();
 function App() {
+
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div>
-      <NavBar />
+    <div className={`${darkMode ? "dark" : ""}`}>
+      <NavBar toggleDarkMode={toggleDarkMode} />
+
       <div >
         <QueryClientProvider client={queryClient}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home toggleDarkMode={toggleDarkMode}  />} />
             <Route path="/cart" element={<Example />} />
             <Route path="/product">
               <Route path=":product/" element={<Product />}></Route>

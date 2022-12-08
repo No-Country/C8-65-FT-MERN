@@ -2,7 +2,7 @@
 
 function Footer() {
   return (
-    <div className="flex gap-3 flex-wrap mt-15 items-center justify-center font-poppins ">
+    <div className="flex gap-3 flex-wrap mt-32 space-x-10 items-center justify-center font-poppins bg-white mr-10">
 
 
       <div className="flex w-92 h-[490px] ml-7 ">
@@ -46,17 +46,7 @@ function Footer() {
           <p className="w-80">Los desinfectantes de manos a base de alcohol gel pueden reducir rápidamente la cantidad de microbios que se encuentran.</p>
           <a className="text-blue-700" href="http://">Informacion</a>
         </div>
-      
-
       </div>
-
-
-
-
-    
-       
-
-
 
     </div>
 

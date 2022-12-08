@@ -63,15 +63,16 @@ const Home = () => {
                     slidesPerView={1}
                     loop={true}
                     navigation={true}
+                    autoplay={true}
                     modules={[Autoplay, Navigation, Thumbs]}
                     grabCursor={true}
                     className="  md:w-full"
 
                     breakpoints={{
-                        640: {
+                        659: {
                             slidesPerView: 2,
                         },
-                        768: {
+                        959: {
                             slidesPerView: 3,
                         },
                     }}
@@ -81,7 +82,7 @@ const Home = () => {
                         <div className="flex justify-center items-center h-screen space-x-5">
 
                             {products.map((product) => (
-                                product.day && <SwiperSlide className='flex items-center justify-center space-x-5 mt-[3rem]' key={product._id}>
+                                product.day && <SwiperSlide className=' flex items-center justify-center space-x-5 mt-[3rem]' key={product._id}>
                                     <Card product={product} ></Card>
                                 </SwiperSlide>
                             ))}

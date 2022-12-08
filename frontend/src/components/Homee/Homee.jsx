@@ -7,7 +7,7 @@ function Homee() {
   return (
     <IconContext.Provider value={{ color: '#24BAA0' }}>
 
-      <div className=" grid grid-cols-1 mt-5 h-auto font-poppins">
+      <div className=" grid grid-cols-1 mt-5 w-full h-auto font-poppins bg-white ">
         <div className="flex flex-col lg:flex-row my-5 mb-[100px] gap-y-8">
           <div className=" w-full lg:w-2/5 flex flex-col place-items-center place-content-center lg:my-0 my-10">
             <div className="ml-10 flex flex-col lg:items-start items-center  ">
@@ -31,28 +31,28 @@ function Homee() {
         </div>
 
         <div className="w-full  lg:h-28 h-auto mt-10 flex lg:items-center lg:justify-center space-y-6 lg:flex-row
-        flex-col lg:my-0 my-5 items-start justify-center my-6 ">
+        flex-col lg:my-0 my-5 items-center justify-center ">
 
           <div className=" flex row w-[300px] ">
             <MdOutlineSavings className="w-[40px] h-[40px] mr-6"></MdOutlineSavings>
             <div className="flex flex-col">
-              <h3 className="text-lg font-[30px] lg:font-Montserrat" >Donaciones</h3>
+              <h3 className="text-lg  font-[30px] lg:font-medium" >Donaciones</h3>
               <p>Donaciones a los necesitados.</p>
             </div>
           </div>
 
-          <div className=" flex row w-[300px]">
+          <div className=" flex row w-[300px] ">
             <MdOutlineVerifiedUser className="w-[40px] h-[40px] mr-6"></MdOutlineVerifiedUser>
             <div className="flex flex-col">
-              <h3 className="text-lg  font-[30px] lg:font-Montserrat" >Verificar</h3>
-              <p>Puedes Verificarte iniciando seccion. </p>
+              <h3 className="text-lg  font-[30px] lg:font-medium" >Verificar</h3>
+              <p>Verificate iniciando seccion. </p>
             </div>
           </div>
 
           <div className=" flex row w-[300px] ">
             <MdOutlineComputer className="w-[40px] h-[40px] mr-6"></MdOutlineComputer>
             <div className="flex flex-col">
-              <h3 className="text-lg  font-[30px] lg:font-Montserrat ">Online</h3>
+              <h3 className="text-lg  font-[30px] lg:font-medium ">Online</h3>
               <p>Podes realizar pedidos via online.</p>
             </div>
           </div>
@@ -60,13 +60,12 @@ function Homee() {
           <div className=" flex row w-[300px] ">
             <MdOutlineDirectionsBusFilled className="w-[40px] h-[40px] mr-6"></MdOutlineDirectionsBusFilled>
             <div className="flex flex-col">
-              <h3 className="text-lg  font-[30px] lg:font-Montserrat">Delivery</h3>
+              <h3 className="text-lg  font-[30px] lg:font-medium">Delivery</h3>
               <p>contamos con hacer envio hasta su casa.</p>
             </div>
           </div>
         </div>
-      </div>
-
+          </div>
     </IconContext.Provider>
   );
 }

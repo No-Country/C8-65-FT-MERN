@@ -19,7 +19,7 @@ export const DropDown = () => {
     return (
         <div className=" flex justify-end " style={{ zindex: '999' }}>
             <Menu as="div" className="relative">
-                <Menu.Button className="inline-flex justify-center w-full  px-4 py-2 bg-white text-sm font-medium text-gray-700   ">
+                <Menu.Button className="inline-flex justify-center w-full  px-4 py-2 bg-white  text-sm font-medium text-gray-700   ">
                     <BsPerson className="h-7 w-7" />
                     <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                 </Menu.Button>
