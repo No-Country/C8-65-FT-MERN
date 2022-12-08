@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios';
 import { Store } from '../../Store'
 import Checkout from '../Checkout';
-
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AnimatedPage from '../AnimatedPage/AnimatedPage'
 import Loading from '../Loading/Loading';
@@ -49,7 +49,10 @@ const Orden = () => {
             ctxDispatch({ type: 'CART_CLEAR' });
             dispatch({ type: 'CREATE_SUCCESS' });
             localStorage.removeItem('cartItems');
-            navigate(`/order/${data.order._id}`);
+            setTimeout(() => navigate(`/order/${data.order._id}`), 3000)
+            toast.success('¡Orden realizada, sera redirigido a los detalles', {
+                autoClose: 3000,
+            })
         } catch (err) {
             dispatch({ type: 'CREATE_FAIL' });
         }
@@ -141,6 +144,7 @@ const Orden = () => {
                     </div>
                 </AnimatedPage>
             </div>}
+            <ToastContainer />
         </>
     )
 }
