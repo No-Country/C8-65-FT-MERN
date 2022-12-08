@@ -4,9 +4,12 @@ import { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { Store } from '../../Store';
 import AnimatedPage from '../AnimatedPage/AnimatedPage';
+import { toast, ToastContainer } from 'react-toastify';
+import { useRef } from 'react';
 
 
 const SigIn = () => {
+    const toastId = useRef(null);
     const { search } = useLocation();
     const redirectInUrl = new URLSearchParams(search).get('redirect');
     const redirect = redirectInUrl ? redirectInUrl : '/';
@@ -28,7 +31,11 @@ const SigIn = () => {
             navigate(redirect || '/')
             console.log(data);
         } catch (err) {
-            alert('invalid email or password')
+
+
+            if (!toast.isActive(toastId.current)) {
+                toastId.current = toast.error("Usuario o contraseña invalidos", {});
+            }
         }
     };
 
@@ -39,7 +46,7 @@ const SigIn = () => {
     }, [navigate, redirect, userInfo])
     return (
         <AnimatedPage>
-            <div className='w-[30%] flex mx-auto flex-col  items-center'>
+            <div className='w-[30%] flex mx-auto flex-col  items-center order'>
                 <h3 className='text-left w-full ml-2 my-8 text-xl'>Iniciar Sesion</h3>
                 <form onSubmit={submitHandler} className='ml-0 w-full flex flex-col  '>
                     <div className='flex flex-col'>
@@ -59,6 +66,7 @@ const SigIn = () => {
                     </div>
                 </form>
             </div>
+            <ToastContainer />
         </AnimatedPage>
     )
 }

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+
 import { Store } from '../../Store';
 import Checkout from '../Checkout';
 import AnimatedPage from '../AnimatedPage/AnimatedPage';
@@ -32,7 +31,7 @@ const MetodoDePago = () => {
     };
     return (
         <AnimatedPage>
-            <div>
+            <div className='order'>
                 <Checkout step1 step2 step3></Checkout>
                 <div className="container small-container mx-auto w-full h-auto flex items-center flex-col my-5 ">
                     <h4 className="my-3 text-lg font-semibold mx-6">Metodo de pago</h4>

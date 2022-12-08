@@ -13,8 +13,8 @@ const Favorite = () => {
     return (
         <AnimatedPage>
             <IconContext.Provider value={{ color: '#2ca289' }}>
-                <section className=''>
-                    <article className="w-full px-4" >
+                <section className='favorite'>
+                    <article className="w-full px-4 " >
                         <h2 className='font-semibold text-xl md:text-2xl py-6'>Tus productos favoritos:</h2>
                         <div className='flex justify-center md:justify-start flex-wrap gap-3'>
                             {state?.favorite && state?.favorite.map(data => <FavoriteCard key={data.name} data={data} />)}

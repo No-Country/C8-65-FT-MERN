@@ -46,7 +46,7 @@ const SignUp = () => {
     }, [navigate, redirect, userInfo])
     return (
         <AnimatedPage>
-            <div className='w-[30%] flex mx-auto flex-col  items-center'>
+            <div className='w-[30%] flex mx-auto flex-col  items-center order'>
                 <h3 className='text-left w-full ml-2 my-8 text-xl'>Registrarse</h3>
                 <form onSubmit={submitHandler} className='ml-0 w-full flex flex-col  '>
                     <div className="flex flex-col" >

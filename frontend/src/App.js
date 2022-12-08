@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/screens/Home";
-import Example from "./components/screens/CartPrueba";
+import Example from "./components/screens/CartScreen";
 import Product from "./components/screens/Product";
 import SigIn from "./components/screens/Signin";
 import SignUp from "./components/screens/SignUp";
@@ -26,27 +26,29 @@ function App() {
   return (
     <div>
       <NavBar />
-      <QueryClientProvider client={queryClient}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Example />} />
-          <Route path="/product">
-            <Route path=":product/" element={<Product />}></Route>
-          </Route>
-          <Route path="/signin" element={<SigIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/shipping" element={<Pasarella />} />
-          <Route path="/payment" element={<MetodoDePago />} />
-          <Route path="/placeorder" element={<Orden />} />
-          <Route path="/order/:id" element={<OrderScreen />} />
-          <Route path="/orderhistory" element={<OrderHistoryScreen />} />
-          <Route path="/profile" element={<ProfileScreen />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/Favorite" element={<Favorite />} />
-          <Route path="/products" element={<Productos />} />
+      <div >
+        <QueryClientProvider client={queryClient}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Example />} />
+            <Route path="/product">
+              <Route path=":product/" element={<Product />}></Route>
+            </Route>
+            <Route path="/signin" element={<SigIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/shipping" element={<Pasarella />} />
+            <Route path="/payment" element={<MetodoDePago />} />
+            <Route path="/placeorder" element={<Orden />} />
+            <Route path="/order/:id" element={<OrderScreen />} />
+            <Route path="/orderhistory" element={<OrderHistoryScreen />} />
+            <Route path="/profile" element={<ProfileScreen />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/Favorite" element={<Favorite />} />
+            <Route path="/products" element={<Productos />} />
 
-        </Routes>
-      </QueryClientProvider>
+          </Routes>
+        </QueryClientProvider>
+      </div>
       <Footer2 />
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { AiOutlineFacebook, AiOutlineForm, AiOutlineInstagram, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Store } from '../../Store';
 const Footer2 = () => {
 
-  const navigate = useNavigate();
+
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
@@ -17,14 +17,14 @@ const Footer2 = () => {
     localStorage.removeItem('shippingAddress');
   }
   return (
-    <footer className='p-4 bg-celeste_oscuro sm:p-6 my-6'>
+    <footer className='p-4 bg-celeste_oscuro sm:p-6 mt-6 fixed-botton'>
       <div className='md:flex md:justify-between lg:px-16 px-0'>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-6 lg:grid-cols-4 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 sm:gap-6 lg:grid-cols-4 w-full">
           <div>
             <Link to='/products'>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Productos</h2>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Productos</h2>
             </Link>
-            <ul class="text-white">
+            <ul className="text-white">
               <li >
                 <span >Dolor de panza</span>
               </li>
@@ -37,8 +37,8 @@ const Footer2 = () => {
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Perfil</h2>
-            {userInfo ? (<ul class="text-white">
+            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Perfil</h2>
+            {userInfo ? (<ul className="text-white">
               <li >
                 <Link to='/orderhistory'><span>Historial de ordenes</span></Link>
               </li>
@@ -48,13 +48,13 @@ const Footer2 = () => {
                 </Link>
               </li>
               <li >
-                <li to='/profile'>
 
-                  <button onClick={signoutHandler}>Desconectar</button>
-                </li>
+
+                <button onClick={signoutHandler}>Desconectar</button>
+
               </li>
             </ul>) : (
-              <ul class="text-white">
+              <ul className="text-white">
                 <li >
                   <Link to='/signin'><span>Iniciar Sesion</span></Link>
                 </li>
@@ -62,8 +62,8 @@ const Footer2 = () => {
             )}
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-white uppercase ml-4 ">Contacto</h2>
-            <ul class="text-white">
+            <h2 className="mb-6 text-sm font-semibold text-white uppercase ml-4 ">Contacto</h2>
+            <ul className="text-white">
               <li className='flex flex-row'>
                 <AiOutlineForm className='my-auto mx-2' />
                 <Link to='/contact'>
@@ -81,8 +81,8 @@ const Footer2 = () => {
             </ul>
           </div>
           <div className='w-auto'>
-            <h2 class="mb-3 text-sm font-semibold text-white uppercase ml-4 ">Seguinos en nuestras redes</h2>
-            <ul class="text-white flex flex-row ml-4 ">
+            <h2 className="mb-3 text-sm font-semibold text-white uppercase ml-4 ">Seguinos en nuestras redes</h2>
+            <ul className="text-white flex flex-row ml-4 ">
               <li>
                 <AiOutlineInstagram className='h-[30px] w-[30px]' />
               </li>
