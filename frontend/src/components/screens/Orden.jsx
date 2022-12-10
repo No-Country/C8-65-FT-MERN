@@ -30,8 +30,8 @@ const Orden = () => {
 
     const placeOrderHandler = async () => {
 
+        dispatch({ type: 'CREATE_REQUEST' });
         try {
-            dispatch({ type: 'CREATE_REQUEST' });
             const { data } = await axios.post(
                 '/api/orders',
                 {
@@ -46,13 +46,17 @@ const Orden = () => {
                     },
                 }
             );
-            ctxDispatch({ type: 'CART_CLEAR' });
+
             dispatch({ type: 'CREATE_SUCCESS' });
             localStorage.removeItem('cartItems');
-            setTimeout(() => navigate(`/order/${data.order._id}`), 3000)
             toast.success('¡Orden realizada, sera redirigido a los detalles', {
                 autoClose: 3000,
             })
+            setTimeout(() => {
+                navigate(`/order/${data.order._id}`)
+                ctxDispatch({ type: 'CART_CLEAR' })
+            }
+                , 3500)
         } catch (err) {
             dispatch({ type: 'CREATE_FAIL' });
         }
@@ -67,7 +71,7 @@ const Orden = () => {
     cart.totalPrice = cart.itemsPrice
     return (
         <>
-            {loading ? <Loading /> : <div>
+            {loading ? <Loading orderClass='order' /> : <div>
                 <Checkout step1 step2 step3 step4></Checkout>
                 <AnimatedPage>
                     <div className='lg:container  lg:mx-auto lg:mt-10 my-7 px-5 order'>
