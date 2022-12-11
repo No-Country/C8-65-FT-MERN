@@ -12,9 +12,9 @@ function Homee() {
           <div className=" w-full lg:w-2/5 flex flex-col place-items-center place-content-center lg:my-0 my-10">
             <div className="ml-10 flex flex-col lg:items-start items-center  ">
 
-              <div className="flex flex-col text-start lg:items-start lg:justify-start items-center justify-center ">
-                <h1 className="text-2xl font-Montserrat mb-4">Phamarcy Medicamentos</h1>
-                <p className="flex text-start w-[70%]">
+              <div className="flex flex-col text-start lg:items-start lg:justify-start items-center justify-center max-sm:bg-blue-200 max-sm:pr-10">
+                <h1 className="text-2xl font-Montserrat max-sm:ml-10 mb-4">Phamarcy Medicamentos</h1>
+                <p className="flex text-start max-sm:ml-10 w-[70%]">
                   Farmacia orientada a los servicios que sustentan en un nuevo tipo de cliente interesado en la búsqueda del bienestar y en el conocimiento de su salud para cuidarla y reforzarla.
                 </p>
 
@@ -33,8 +33,8 @@ function Homee() {
         <div className="w-full  lg:h-28 h-auto mt-10 flex lg:items-center lg:justify-center space-y-6 lg:flex-row
         flex-col lg:my-0 my-5 items-center justify-center ">
 
-          <div className=" flex row w-[300px] mt-7 ">
-            <MdOutlineSavings className="w-[40px] h-[40px] mr-6"></MdOutlineSavings>
+          <div className=" flex row w-[260px] mr-10 mt-7">
+            <MdOutlineSavings className="w-[50px] h-[40px] mr-6"></MdOutlineSavings>
             <div className="flex flex-col">
               <h3 className="text-lg  font-[30px] lg:font-medium" >Donaciones</h3>
               <p>Donaciones a los necesitados.</p>
